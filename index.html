@@ -137,6 +137,50 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-02-22T07:02:34.004Z">2019-02-22</time>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 409 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/02/22/vscode-+-sftp/">vscode + sftp</a>
+            
+        </h1>
+        <div class="content">
+            <h1 id="1-安装sftp扩展"><a href="#1-安装sftp扩展" class="headerlink" title="1. 安装sftp扩展"></a>1. 安装sftp扩展</h1><p>在vscode扩展中搜索sftp，下载量超过一百万的那个就是了，作者是liximomo。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/15197627-8ec82f272046095d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image"></p>
+<p>按F1键搜索SFTP:Config,接下来配置sftp.json, 注意不要注释<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;host&quot;: &quot;server-ip&quot;,</span><br><span class="line">    &quot;port&quot;: server-port,</span><br><span class="line">    &quot;username&quot;: &quot;***&quot;,</span><br><span class="line">    &quot;password&quot;: &quot;***&quot;,</span><br><span class="line">    &quot;protocol&quot;: &quot;sftp&quot;, </span><br><span class="line">    &quot;agent&quot;: null,</span><br><span class="line">    &quot;privateKeyPath&quot;: null, </span><br><span class="line">    &quot;passphrase&quot;: null, </span><br><span class="line">    &quot;passive&quot;: false, </span><br><span class="line">    &quot;interactiveAuth&quot;: true,</span><br><span class="line">    &quot;remotePath&quot;: &quot;yourfolderpath&quot;,</span><br><span class="line">    &quot;uploadOnSave&quot;: true,</span><br><span class="line">    &quot;syncMode&quot;: &quot;update&quot;,</span><br><span class="line">    &quot;ignore&quot;: [</span><br><span class="line">        &quot;**/.vscode/**&quot;,</span><br><span class="line">        &quot;**/.git/**&quot;,</span><br><span class="line">        &quot;**/.DS_Store&quot;</span><br><span class="line">    ],</span><br><span class="line">    &quot;watcher&quot;: &#123;</span><br><span class="line">        &quot;files&quot;: &quot;glob&quot;,</span><br><span class="line">        &quot;autoUpload&quot;: true,</span><br><span class="line">        &quot;autoDelete&quot;: true</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-在本地编辑远程文件并测试"><a href="#2-在本地编辑远程文件并测试" class="headerlink" title="2. 在本地编辑远程文件并测试"></a>2. 在本地编辑远程文件并测试</h1><p>按F1键搜索view:Show SFTP，在vscode的右侧会出现SFTP的图标，在这里可以查看到远程文件<br><img src="https://upload-images.jianshu.io/upload_images/15197627-3e99af60ac1f8597.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DeepinScreenshot_select-area_20190117161143.png"><br>打开一个远程文件<br><img src="https://upload-images.jianshu.io/upload_images/15197627-b3b582a1c8a5cd38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DeepinScreenshot_select-area_20190117161329.png"><br>初始内容是<br><img src="https://upload-images.jianshu.io/upload_images/15197627-648c86bf22ed7b65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DeepinScreenshot_select-area_20190117161434.png"><br>现在我们修改一下<br><img src="https://upload-images.jianshu.io/upload_images/15197627-aa81af70e785fa6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DeepinScreenshot_select-area_20190117161535.png"><br>需要注意的是，修改完成后你保存的只是本地副本，还需要经过上传，才能达到真正修改的目的，右键选择upload即可，为了方便起见，这里修改一下快捷键，连续按下ctrl+k和ctrl+s，再ctrl+f搜索upload，将对应项快捷键设为ctrl+alt+s<br><img src="https://upload-images.jianshu.io/upload_images/15197627-f5aa51e8d3db2fc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="DeepinScreenshot_select-area_20190117162004.png"><br>上传之后，源文件就已经和本地编辑器相同了</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-02-22T06:09:03.000Z">2019-02-22</time>
                 
                 
@@ -263,7 +307,7 @@
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        2
+                        3
                     </p>
                 </div>
             </div>
@@ -393,6 +437,25 @@
         
         <article class="media">
             
+            <a href="/2019/02/22/vscode-+-sftp/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="vscode + sftp">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-22T07:02:34.004Z">2019-02-22</time></div>
+                    <a href="/2019/02/22/vscode-+-sftp/" class="has-link-black-ter is-size-6">vscode + sftp</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/02/22/My-Test-Post/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="My Test Post">
@@ -447,7 +510,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
@@ -487,6 +550,25 @@
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/22/vscode-+-sftp/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="vscode + sftp">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-22T07:02:34.004Z">2019-02-22</time></div>
+                    <a href="/2019/02/22/vscode-+-sftp/" class="has-link-black-ter is-size-6">vscode + sftp</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -544,7 +626,7 @@
                     <span class="level-item">February 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">2</span>
+                    <span class="level-item tag">3</span>
                 </span>
             </a>
         </li>
