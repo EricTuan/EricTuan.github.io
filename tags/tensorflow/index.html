@@ -89,6 +89,8 @@ var _hmt = _hmt || [];
     
 
     
+    
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -201,6 +203,20 @@ var _hmt = _hmt || [];
 
 
 
+
+
+
+    <div id="toc-div" class="toc-article">
+        <strong class="toc-title">Index</strong>
+        
+            
+        
+    </div>
+
+<a id="more"></a>
+<p>运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译</p>
+<p><img src="post_gallery/tensorflow_warning.png" alt="tensorflow warning"></p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`import os  </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;1&apos; # 这是默认的显示等级，显示所有信息  </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;2&apos; # 只显示 warning 和 Error   </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;3&apos; # 只显示 Error&apos;</span><br></pre></td></tr></table></figure>
 
 
 </div>
@@ -1205,6 +1221,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
+    
+    
     
 
 

@@ -94,6 +94,8 @@ var _hmt = _hmt || [];
     
 
     
+    
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -220,16 +222,16 @@ var _hmt = _hmt || [];
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/01/卷积神经网络的参数量和计算量-+-Depthwise卷积与Pointwise卷积/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/01/python装饰器/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">卷积神经网络的参数量和计算量-+-Depthwise卷积与Pointwise卷积</span>
+                <span class="level-item">python装饰器</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/python-速成集中营-—-预览版/">
-                <span class="level-item">python-速成集中营(预览版)</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/程序运行时间/">
+                <span class="level-item">程序运行时间</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -259,6 +261,20 @@ var _hmt = _hmt || [];
 
     </div>
 </div>
+
+
+
+    <div id="toc-div" class="toc-article">
+        <strong class="toc-title">Index</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#args-数组参数"><span class="toc-number">1.</span> <span class="toc-text">*args  数组参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kwargs-字典参数"><span class="toc-number">2.</span> <span class="toc-text">**kwargs 字典参数</span></a></li></ol>
+        
+    </div>
+
+<a id="more"></a>
+<h2 id="args-数组参数"><a href="#args-数组参数" class="headerlink" title="*args  数组参数"></a>*args  数组参数</h2><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
+<h2 id="kwargs-字典参数"><a href="#kwargs-字典参数" class="headerlink" title="**kwargs 字典参数"></a>**kwargs 字典参数</h2><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="https://www.cnblogs.com/jdy113/p/8051839.html" target="_blank" rel="noopener">简明Python 可变参数</a></p>
 </div>
                 
 
@@ -1038,6 +1054,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
+    
+    
     
 
 

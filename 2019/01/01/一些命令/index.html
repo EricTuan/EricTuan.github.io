@@ -94,6 +94,8 @@ var _hmt = _hmt || [];
     
 
     
+    
+    
 
 
 <link rel="stylesheet" href="/css/style.css">
@@ -245,16 +247,16 @@ var _hmt = _hmt || [];
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/01/Ubuntu-18-04-安装-PyCharm/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Ubuntu-18-04-安装-PyCharm</span>
+                <span class="level-item">python-带默认值字典dict(可实现一对多)</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/个人博客的搭建/">
-                <span class="level-item">基于hexo和icarus的个人博客搭建</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/Ubuntu18-0-4仿Mac界面/">
+                <span class="level-item">Ubuntu18-0-4仿Mac界面</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -284,6 +286,45 @@ var _hmt = _hmt || [];
 
     </div>
 </div>
+
+
+
+    <div id="toc-div" class="toc-article">
+        <strong class="toc-title">Index</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#find-dirpath-ctime-1"><span class="toc-number">1.</span> <span class="toc-text">find dirpath/ -ctime -1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#commend-tee-mylog-log"><span class="toc-number">2.</span> <span class="toc-text">commend | tee mylog.log</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ls-l-grep-“-“-wc-l"><span class="toc-number">3.</span> <span class="toc-text">ls -l|grep “^-“| wc -l</span></a></li></ol>
+        
+    </div>
+
+<a id="more"></a>
+<h2 id="find-dirpath-ctime-1"><a href="#find-dirpath-ctime-1" class="headerlink" title="find dirpath/ -ctime -1"></a>find dirpath/ -ctime -1</h2><p>列出dirpath下所有一天内的新文件</p>
+<h2 id="commend-tee-mylog-log"><a href="#commend-tee-mylog-log" class="headerlink" title="commend | tee mylog.log"></a>commend | tee mylog.log</h2><p>在终端执行一条命令时，同时使用tee命令，可以将屏幕输出保存到指定文件中，方便查看</p>
+<h2 id="ls-l-grep-“-“-wc-l"><a href="#ls-l-grep-“-“-wc-l" class="headerlink" title="ls -l|grep “^-“| wc -l"></a>ls -l|grep “^-“| wc -l</h2><p>列出当前文件夹下目录文件数</p>
+<p>Python产生一个数值范围内的不重复的随机数，可以使用random模块中的random.sample函数</p>
+<p>在python3中列出所有keys到列表, firstStr = list(myTree.keys())</p>
+<p>assert 2==1,’2不等于1’</p>
+<p>（1）直接赋值,默认浅拷贝传递对象的引用而已,原始列表改变，被赋值的b也会做相同的改变<br>（2）copy浅拷贝，没有拷贝子对象，所以原始数据改变，子对象会改变</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>import copy</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>c=copy.copy(alist)<br>（3）深拷贝，包含对象里面的自对象的拷贝，所以原始对象的改变不会造成深拷贝里任何子元素的改变<br>import copy</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>d=copy.deepcopy(alist)</p>
+</blockquote>
+</blockquote>
+</blockquote>
 </div>
                 
 
@@ -1067,6 +1108,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
+    
+    
     
 
 
