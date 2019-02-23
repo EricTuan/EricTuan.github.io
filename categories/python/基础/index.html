@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Categoria: 基础 - Eric Tuan</title>
+<title>Category: 基础 - Eric Tuan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categorias</a></li>
+            <li><a href="/categories">Categories</a></li>
             
             <li><a href="/categories/python/">python</a></li>
             
@@ -235,7 +235,7 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">通过在vscode配置sftp, 远程修改服务器文件</a>
+                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">python中open的模式</a>
             
         </h1>
         <div class="content">
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">通过在vscode配置sftp, 远程修改服务器文件</a>
+                <a class="has-link-black-ter" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">python-带默认值字典dict(可实现一对多)</a>
             
         </h1>
         <div class="content">
@@ -334,7 +334,7 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/01/python-可变参数/">通过在vscode配置sftp, 远程修改服务器文件</a>
+                <a class="has-link-black-ter" href="/2019/01/01/python-可变参数/">python-可变参数</a>
             
         </h1>
         <div class="content">
@@ -342,69 +342,6 @@ var _hmt = _hmt || [];
 <h1 id="1-args-数组参数"><a href="#1-args-数组参数" class="headerlink" title="1. *args  数组参数"></a>1. *args  数组参数</h1><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
 <h1 id="2-kwargs-字典参数"><a href="#2-kwargs-字典参数" class="headerlink" title="2. **kwargs 字典参数"></a>2. **kwargs 字典参数</h1><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
 <p>参考：<br><a href="https://www.cnblogs.com/jdy113/p/8051839.html" target="_blank" rel="noopener">简明Python 可变参数</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7 minutes read (About 984 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/01/python遍历文件夹及其子目录/">通过在vscode配置sftp, 远程修改服务器文件</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<h1 id="1-os-listdir-path"><a href="#1-os-listdir-path" class="headerlink" title="1. os.listdir(path)"></a>1. os.listdir(path)</h1><p>返回指定的文件夹包含的文件或文件夹的名字的列表</p>
-<h1 id="2-walk-top-topdown-True-onerror-None-followlinks-False"><a href="#2-walk-top-topdown-True-onerror-None-followlinks-False" class="headerlink" title="2. walk(top, topdown=True, onerror=None, followlinks=False)"></a>2. walk(top, topdown=True, onerror=None, followlinks=False)</h1><p>参数</p>
-<ul>
-<li>top 是你所要遍历的目录的地址</li>
-<li>topdown 为真，则优先遍历top目录，否则优先遍历top的子目录(默认为开启)</li>
-<li>onerror 需要一个 callable 对象，当walk需要异常时，会调用</li>
-<li>followlinks 如果为真，则会遍历目录下的快捷方式(linux 下是 symbolic link)实际所指的目录(默认关闭)</li>
-</ul>
-<p>os.walk 的返回值是一个<strong>生成器</strong>(generator),也就是说我们需要不断的遍历它，来获得所有的内容。<br>每次遍历的对象都是返回的是一个三元组(root,dirs,files)</p>
-<ul>
-<li>root 所指的是当前正在遍历的这个文件夹的本身的地址</li>
-<li>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</li>
-<li>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</li>
-</ul>
-<p>一个使用例子，利用生成器，每次用.<strong>next</strong>()取得一个返回值，送入函数处理，直到所有的值已取得：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root_dirs_files = os.walk(folderpath)</span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        your_function(root_dirs_files.__next__())</span><br><span class="line">    except StopIteration:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure></p>
-<p>一个小提示：在python 3.x中 generator（有yield关键字的函数则会被识别为generator函数）中的next变为<code>__next__</code>了,next是python 3.x以前版本中的方法</p>
-<h1 id="3-另附os-path模块"><a href="#3-另附os-path模块" class="headerlink" title="3. 另附os.path模块"></a>3. 另附os.path模块</h1><p>os.path.abspath(path) #返回绝对路径<br>os.path.basename(path) #返回文件名<br>os.path.commonprefix(list) #返回list(多个路径)中，所有path共有的最长的路径。<br><strong>os.path.dirname(path) #返回文件路径<br>os.path.exists(path)  #路径存在则返回True,路径损坏返回False</strong><br>os.path.lexists  #路径存在则返回True,路径损坏也返回True<br>os.path.expanduser(path)  #把path中包含的”~”和”~user”转换成用户目录<br>os.path.expandvars(path)  #根据环境变量的值替换path中包含的”$name”和”${name}”<br>os.path.getatime(path)  #返回最后一次进入此path的时间。<br>os.path.getmtime(path)  #返回在此path下最后一次修改的时间。<br>os.path.getctime(path)  #返回path的大小<br>os.path.getsize(path)  #返回文件大小，如果文件不存在就返回错误<br>os.path.isabs(path)  #判断是否为绝对路径<br><strong>os.path.isfile(path)  #判断路径是否为文件<br>os.path.isdir(path)  #判断路径是否为目录</strong><br>os.path.islink(path)  #判断路径是否为链接<br>os.path.ismount(path)  #判断路径是否为挂载点（）<br><strong>os.path.join(path1[, path2[, …]])  #把目录和文件名合成一个路径</strong><br>os.path.normcase(path)  #转换path的大小写和斜杠<br>os.path.normpath(path)  #规范path字符串形式<br>os.path.realpath(path)  #返回path的真实路径<br>os.path.relpath(path[, start])  #从start开始计算相对路径<br>os.path.samefile(path1, path2)  #判断目录或文件是否相同<br>os.path.sameopenfile(fp1, fp2)  #判断fp1和fp2是否指向同一文件<br>os.path.samestat(stat1, stat2)  #判断stat tuple stat1和stat2是否指向同一个文件<br><strong>os.path.split(path)  #把路径分割成dirname和basename，返回一个元组</strong><br>os.path.splitdrive(path)   #一般用在windows下，返回驱动器名和路径组成的元组<br>os.path.splitext(path)  #分割路径，返回路径名和文件扩展名的元组<br>os.path.splitunc(path)  #把路径分割为加载点与文件<br><strong>os.path.walk(path, visit, arg)  #遍历path，进入每个目录都调用visit函数，visit函数必须有<br>3个参数(arg, dirname, names)，dirname表示当前目录的目录名，names代表当前目录下的所有<br>文件名，args则为walk的第三个参数</strong><br>os.path.supports_unicode_filenames  #设置是否支持unicode路径名</p>
-<p>参考：<br><a href="https://www.jianshu.com/p/bbad16822eab" target="_blank" rel="noopener">python中os.walk的用法</a><br><a href="https://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="noopener">python os.path模块</a></p>
 
         </div>
         
@@ -445,12 +382,75 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/01/装饰器/">通过在vscode配置sftp, 远程修改服务器文件</a>
+                <a class="has-link-black-ter" href="/2019/01/01/python装饰器/">python装饰器</a>
             
         </h1>
         <div class="content">
             <a id="more"></a>
 <p><a href="https://blog.csdn.net/jacke121/article/details/77937465" target="_blank" rel="noopener">Python 装饰器记录总结 (终极版)</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 984 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/01/python遍历文件夹及其子目录/">python遍历文件夹及其子目录</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-os-listdir-path"><a href="#1-os-listdir-path" class="headerlink" title="1. os.listdir(path)"></a>1. os.listdir(path)</h1><p>返回指定的文件夹包含的文件或文件夹的名字的列表</p>
+<h1 id="2-walk-top-topdown-True-onerror-None-followlinks-False"><a href="#2-walk-top-topdown-True-onerror-None-followlinks-False" class="headerlink" title="2. walk(top, topdown=True, onerror=None, followlinks=False)"></a>2. walk(top, topdown=True, onerror=None, followlinks=False)</h1><p>参数</p>
+<ul>
+<li>top 是你所要遍历的目录的地址</li>
+<li>topdown 为真，则优先遍历top目录，否则优先遍历top的子目录(默认为开启)</li>
+<li>onerror 需要一个 callable 对象，当walk需要异常时，会调用</li>
+<li>followlinks 如果为真，则会遍历目录下的快捷方式(linux 下是 symbolic link)实际所指的目录(默认关闭)</li>
+</ul>
+<p>os.walk 的返回值是一个<strong>生成器</strong>(generator),也就是说我们需要不断的遍历它，来获得所有的内容。<br>每次遍历的对象都是返回的是一个三元组(root,dirs,files)</p>
+<ul>
+<li>root 所指的是当前正在遍历的这个文件夹的本身的地址</li>
+<li>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</li>
+<li>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</li>
+</ul>
+<p>一个使用例子，利用生成器，每次用.<strong>next</strong>()取得一个返回值，送入函数处理，直到所有的值已取得：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root_dirs_files = os.walk(folderpath)</span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        your_function(root_dirs_files.__next__())</span><br><span class="line">    except StopIteration:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure></p>
+<p>一个小提示：在python 3.x中 generator（有yield关键字的函数则会被识别为generator函数）中的next变为<code>__next__</code>了,next是python 3.x以前版本中的方法</p>
+<h1 id="3-另附os-path模块"><a href="#3-另附os-path模块" class="headerlink" title="3. 另附os.path模块"></a>3. 另附os.path模块</h1><p>os.path.abspath(path) #返回绝对路径<br>os.path.basename(path) #返回文件名<br>os.path.commonprefix(list) #返回list(多个路径)中，所有path共有的最长的路径。<br><strong>os.path.dirname(path) #返回文件路径<br>os.path.exists(path)  #路径存在则返回True,路径损坏返回False</strong><br>os.path.lexists  #路径存在则返回True,路径损坏也返回True<br>os.path.expanduser(path)  #把path中包含的”~”和”~user”转换成用户目录<br>os.path.expandvars(path)  #根据环境变量的值替换path中包含的”$name”和”${name}”<br>os.path.getatime(path)  #返回最后一次进入此path的时间。<br>os.path.getmtime(path)  #返回在此path下最后一次修改的时间。<br>os.path.getctime(path)  #返回path的大小<br>os.path.getsize(path)  #返回文件大小，如果文件不存在就返回错误<br>os.path.isabs(path)  #判断是否为绝对路径<br><strong>os.path.isfile(path)  #判断路径是否为文件<br>os.path.isdir(path)  #判断路径是否为目录</strong><br>os.path.islink(path)  #判断路径是否为链接<br>os.path.ismount(path)  #判断路径是否为挂载点（）<br><strong>os.path.join(path1[, path2[, …]])  #把目录和文件名合成一个路径</strong><br>os.path.normcase(path)  #转换path的大小写和斜杠<br>os.path.normpath(path)  #规范path字符串形式<br>os.path.realpath(path)  #返回path的真实路径<br>os.path.relpath(path[, start])  #从start开始计算相对路径<br>os.path.samefile(path1, path2)  #判断目录或文件是否相同<br>os.path.sameopenfile(fp1, fp2)  #判断fp1和fp2是否指向同一文件<br>os.path.samestat(stat1, stat2)  #判断stat tuple stat1和stat2是否指向同一个文件<br><strong>os.path.split(path)  #把路径分割成dirname和basename，返回一个元组</strong><br>os.path.splitdrive(path)   #一般用在windows下，返回驱动器名和路径组成的元组<br>os.path.splitext(path)  #分割路径，返回路径名和文件扩展名的元组<br>os.path.splitunc(path)  #把路径分割为加载点与文件<br><strong>os.path.walk(path, visit, arg)  #遍历path，进入每个目录都调用visit函数，visit函数必须有<br>3个参数(arg, dirname, names)，dirname表示当前目录的目录名，names代表当前目录下的所有<br>文件名，args则为walk的第三个参数</strong><br>os.path.supports_unicode_filenames  #设置是否支持unicode路径名</p>
+<p>参考：<br><a href="https://www.jianshu.com/p/bbad16822eab" target="_blank" rel="noopener">python中os.walk的用法</a><br><a href="https://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="noopener">python os.path模块</a></p>
 
         </div>
         
@@ -506,7 +506,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Entradas
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         25
@@ -516,7 +516,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categorias
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         29
@@ -526,7 +526,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Etiquetas
+                        Tags
                     </p>
                     <p class="title has-text-weight-normal">
                         20
@@ -536,7 +536,7 @@ var _hmt = _hmt || [];
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
-                SEGUIR</a>
+                Follow</a>
         </div>
         
         
@@ -611,7 +611,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categorias
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -816,7 +816,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nube de etiquetas
+            Tag Cloud
         </h3>
         <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12.5px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/小花样/" style="font-size: 12.5px;">小花样</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 12.5px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/速成/" style="font-size: 10px;">速成</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
     </div>
@@ -830,7 +830,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -856,14 +856,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/23/Django入门实践/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Django入门实践">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-23T07:55:37.000Z">2019-01-23</time></div>
-                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">Django入门实践</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/Django/">Django</a>
                     </p>
@@ -875,14 +875,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/Deep-Compression-论文阅读/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Deep-Compression-论文阅读">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">Deep-Compression-论文阅读</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/深度学习/">深度学习</a> / <a class="has-link-grey -link" href="/categories/深度学习/模型优化/">模型优化</a>
                     </p>
@@ -894,14 +894,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/dict和json格式转换/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
@@ -913,14 +913,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
                     </p>
@@ -936,7 +936,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -960,7 +960,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1125,7 +1125,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recientes
+            Recent
         </h3>
         
         <article class="media">
@@ -1151,14 +1151,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/23/Django入门实践/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Django入门实践">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-23T07:55:37.000Z">2019-01-23</time></div>
-                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">Django入门实践</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/Django/">Django</a>
                     </p>
@@ -1170,14 +1170,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/Deep-Compression-论文阅读/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Deep-Compression-论文阅读">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">Deep-Compression-论文阅读</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/深度学习/">深度学习</a> / <a class="has-link-grey -link" href="/categories/深度学习/模型优化/">模型优化</a>
                     </p>
@@ -1189,14 +1189,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/dict和json格式转换/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
@@ -1208,14 +1208,14 @@ var _hmt = _hmt || [];
             
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
                     </p>
@@ -1231,7 +1231,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archivos
+            Archives
         </h3>
         <ul class="menu-list">
         
@@ -1255,7 +1255,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Etiquetas
+                Tags
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1585,10 +1585,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Entradas',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categorias',
-                TAGS: 'Etiquetas',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
