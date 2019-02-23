@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Ubuntu18-0-4仿Mac界面 - Eric Tuan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="关于几个目录，GTK、Shell的目录是：/usr/share/themes，图标的目录是/usr/share/icons。放到/usr/share/下是全局修改，也就是说如果你换一个账户登陆，也是可以用这些主题文件的。弊端就是操作较复杂，需要sudo权限。如果仅仅是想修改当前账户的主题，可以选择在/home/YourAccount/（比如 /home/feipeng8848/）下新建两个目录：">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu18-0-4仿Mac界面">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/Ubuntu18-0-4仿Mac界面/index.html">
+<meta property="og:site_name" content="Eric Tuan">
+<meta property="og:description" content="关于几个目录，GTK、Shell的目录是：/usr/share/themes，图标的目录是/usr/share/icons。放到/usr/share/下是全局修改，也就是说如果你换一个账户登陆，也是可以用这些主题文件的。弊端就是操作较复杂，需要sudo权限。如果仅仅是想修改当前账户的主题，可以选择在/home/YourAccount/（比如 /home/feipeng8848/）下新建两个目录：">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-23T06:38:40.741Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu18-0-4仿Mac界面">
+<meta name="twitter:description" content="关于几个目录，GTK、Shell的目录是：/usr/share/themes，图标的目录是/usr/share/icons。放到/usr/share/下是全局修改，也就是说如果你换一个账户登陆，也是可以用这些主题文件的。弊端就是操作较复杂，需要sudo权限。如果仅仅是想修改当前账户的主题，可以选择在/home/YourAccount/（比如 /home/feipeng8848/）下新建两个目录：">
+
+
+
+
+
+<link rel="icon" href="/images/logo.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?8b15341149dd72c215e2e84f172591d2";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/icon.png" alt="Ubuntu18-0-4仿Mac界面" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="My GitHub" href="https://github.com/EricTuan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/linux/">linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/linux/主题美化/">主题美化</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 minutes read (About 379 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Ubuntu18-0-4仿Mac界面
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<p>关于几个目录，GTK、Shell的目录是：/usr/share/themes，图标的目录是/usr/share/icons。<br>放到/usr/share/下是全局修改，也就是说如果你换一个账户登陆，也是可以用这些主题文件的。弊端就是操作较复杂，需要sudo权限。<br>如果仅仅是想修改当前账户的主题，可以选择在/home/YourAccount/（比如 /home/feipeng8848/）下新建两个目录：.themes 和 .icons。注意，目录名称前面有个点 “ . ” ，然后把shell、GTK主题文件放到 .themes中，图标文件放到 .icons 中。</p>
+<h1 id="SHELL"><a href="#SHELL" class="headerlink" title="SHELL"></a>SHELL</h1><p>shell有个感叹号的话,可以注销账户登录,重启tweaks</p>
+<p><a href="https://blog.csdn.net/maguanzhan7939/article/details/80969740" target="_blank" rel="noopener">Ubuntu18.0.4仿Mac界面</a><br><a href="https://blog.csdn.net/Sunshine_in_Moon/article/details/53817659" target="_blank" rel="noopener">Ubuntu16.04 改造成 Mac OX</a><br><a href="https://www.cnblogs.com/feipeng8848/p/8970556.html" target="_blank" rel="noopener">给Ubuntu18.04安装mac os主题</a></p>
+<h1 id="BOOT"><a href="#BOOT" class="headerlink" title="BOOT"></a>BOOT</h1><p>在<a href="https://www.opendesktop.org/s/Gnome/search/projectSearchText/plymouth" target="_blank" rel="noopener">Search results for “plymouth”</a>下载开机文件,解压后按照readme修改,再sudo运行install.sh,中间需要选择开机模式1</p>
+<h1 id="DOCK"><a href="#DOCK" class="headerlink" title="DOCK"></a>DOCK</h1><p><a href="https://www.jianshu.com/p/afa26fe8c7c6" target="_blank" rel="noopener">dask-to-dock 安装配置(图文教程)</a><br><a href="https://linux.cn/article-6265-1.html" target="_blank" rel="noopener">在 Ubuntu 里如何下载、安装和配置 Plank Dock</a></p>
+<h1 id="LOGIN"><a href="#LOGIN" class="headerlink" title="LOGIN"></a>LOGIN</h1><p>GDM（GNOME Display Manager，GDM）主题，也就是登录界面的主题</p>
+<p>选了一个主题<a href="https://www.opendesktop.org/s/Gnome/p/1207015/" target="_blank" rel="noopener">https://www.opendesktop.org/s/Gnome/p/1207015/</a><br>按步骤操作,备份原css,覆盖css,拷贝Setwallpaper脚本,最后直接对图片右键运行set as wallpaper</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/linux/">linux</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/01/一些命令/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">一些命令</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/ubuntu小花样/">
+                <span class="level-item">ubuntu小花样</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'PzIDKsINGEVyzQ0vK2G0SDnI-gzGzoHsz',
+        app_key: '8Fv1MqWLG2XiOo5SRLxzimib',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+    });
+</script>
+
+    </div>
+</div>
+
+
+
+    <div id="toc-div" class="toc-article">
+        <strong class="toc-title">Index</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SHELL"><span class="toc-number">1.</span> <span class="toc-text">SHELL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BOOT"><span class="toc-number">2.</span> <span class="toc-text">BOOT</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOCK"><span class="toc-number">3.</span> <span class="toc-text">DOCK</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#LOGIN"><span class="toc-number">4.</span> <span class="toc-text">LOGIN</span></a></li></ol>
+        
+    </div>
+
+<a id="more"></a>
+<p>关于几个目录，GTK、Shell的目录是：/usr/share/themes，图标的目录是/usr/share/icons。<br>放到/usr/share/下是全局修改，也就是说如果你换一个账户登陆，也是可以用这些主题文件的。弊端就是操作较复杂，需要sudo权限。<br>如果仅仅是想修改当前账户的主题，可以选择在/home/YourAccount/（比如 /home/feipeng8848/）下新建两个目录：.themes 和 .icons。注意，目录名称前面有个点 “ . ” ，然后把shell、GTK主题文件放到 .themes中，图标文件放到 .icons 中。</p>
+<h1 id="SHELL"><a href="#SHELL" class="headerlink" title="SHELL"></a>SHELL</h1><p>shell有个感叹号的话,可以注销账户登录,重启tweaks</p>
+<p><a href="https://blog.csdn.net/maguanzhan7939/article/details/80969740" target="_blank" rel="noopener">Ubuntu18.0.4仿Mac界面</a><br><a href="https://blog.csdn.net/Sunshine_in_Moon/article/details/53817659" target="_blank" rel="noopener">Ubuntu16.04 改造成 Mac OX</a><br><a href="https://www.cnblogs.com/feipeng8848/p/8970556.html" target="_blank" rel="noopener">给Ubuntu18.04安装mac os主题</a></p>
+<h1 id="BOOT"><a href="#BOOT" class="headerlink" title="BOOT"></a>BOOT</h1><p>在<a href="https://www.opendesktop.org/s/Gnome/search/projectSearchText/plymouth" target="_blank" rel="noopener">Search results for “plymouth”</a>下载开机文件,解压后按照readme修改,再sudo运行install.sh,中间需要选择开机模式1</p>
+<h1 id="DOCK"><a href="#DOCK" class="headerlink" title="DOCK"></a>DOCK</h1><p><a href="https://www.jianshu.com/p/afa26fe8c7c6" target="_blank" rel="noopener">dask-to-dock 安装配置(图文教程)</a><br><a href="https://linux.cn/article-6265-1.html" target="_blank" rel="noopener">在 Ubuntu 里如何下载、安装和配置 Plank Dock</a></p>
+<h1 id="LOGIN"><a href="#LOGIN" class="headerlink" title="LOGIN"></a>LOGIN</h1><p>GDM（GNOME Display Manager，GDM）主题，也就是登录界面的主题</p>
+<p>选了一个主题<a href="https://www.opendesktop.org/s/Gnome/p/1207015/" target="_blank" rel="noopener">https://www.opendesktop.org/s/Gnome/p/1207015/</a><br>按步骤操作,备份原css,覆盖css,拷贝Setwallpaper脚本,最后直接对图片右键运行set as wallpaper</p>
+</div>
+                
+
+
+
+
+<div class="column is-2-tablet is-2-desktop is-3-widescreen  has-order-1 column-left ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/post_gallery/my_title.jpg" alt="Eric Tuan">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Eric Tuan
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        人世间 酸甜苦辣 若长良川
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        27
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        30
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        11
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/EricTuan">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="简书" href="https://www.jianshu.com/u/0282253a3890">
+                
+                简书
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc" style="max-height: 400px;overflow: auto;">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#SHELL">
+        <span class="has-mr-6">1</span>
+        <span>SHELL</span>
+        </a></li><li>
+        <a class="is-flex" href="#BOOT">
+        <span class="has-mr-6">2</span>
+        <span>BOOT</span>
+        </a></li><li>
+        <a class="is-flex" href="#DOCK">
+        <span class="has-mr-6">3</span>
+        <span>DOCK</span>
+        </a></li><li>
+        <a class="is-flex" href="#LOGIN">
+        <span class="has-mr-6">4</span>
+        <span>LOGIN</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/EricTuan" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">EricTuan</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://www.jianshu.com/u/0282253a3890" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">段浩然</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.jianshu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/github/">
+            <span class="level-start">
+                <span class="level-item">github</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/github/个人博客/">
+            <span class="level-start">
+                <span class="level-item">个人博客</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/linux/">
+            <span class="level-start">
+                <span class="level-item">linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/linux/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/主题美化/">
+            <span class="level-start">
+                <span class="level-item">主题美化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/命令/">
+            <span class="level-start">
+                <span class="level-item">命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/解压/">
+            <span class="level-start">
+                <span class="level-item">解压</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/软件安装/">
+            <span class="level-start">
+                <span class="level-item">软件安装</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/python/Django/">
+            <span class="level-start">
+                <span class="level-item">Django</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/bug/">
+            <span class="level-start">
+                <span class="level-item">bug</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/conda/">
+            <span class="level-start">
+                <span class="level-item">conda</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/import模块/">
+            <span class="level-start">
+                <span class="level-item">import模块</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/json/">
+            <span class="level-start">
+                <span class="level-item">json</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/numpy/">
+            <span class="level-start">
+                <span class="level-item">numpy</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/pygal/">
+            <span class="level-start">
+                <span class="level-item">pygal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/基础/">
+            <span class="level-start">
+                <span class="level-item">基础</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/收藏/">
+            <span class="level-start">
+                <span class="level-item">收藏</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/服务器/">
+            <span class="level-start">
+                <span class="level-item">服务器</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/服务器/远程连接/">
+            <span class="level-start">
+                <span class="level-item">远程连接</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/">
+            <span class="level-start">
+                <span class="level-item">深度学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/深度学习/tensorflow/">
+            <span class="level-start">
+                <span class="level-item">tensorflow</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/模型优化/">
+            <span class="level-start">
+                <span class="level-item">模型优化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/面试经验/">
+            <span class="level-start">
+                <span class="level-item">面试经验</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12px;">bug</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/小花样/" style="font-size: 14px;">小花样</a> <a href="/tags/模型优化/" style="font-size: 12px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 16px;">深度学习</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow  ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/23/有点意思的文章/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="有点意思的文章">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-23T07:55:37.000Z">2019-02-23</time></div>
+                    <a href="/2019/02/23/有点意思的文章/" class="has-link-black-ter is-size-6">有点意思的文章</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/收藏/">收藏</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/23/Django入门实践/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Django入门实践">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-23T07:55:37.000Z">2019-01-23</time></div>
+                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">Django入门实践</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/Django/">Django</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/Deep-Compression-论文阅读/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Deep-Compression-论文阅读">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">Deep-Compression-论文阅读</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/深度学习/">深度学习</a> / <a class="has-link-grey -link" href="/categories/深度学习/模型优化/">模型优化</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">26</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Django/">
+                        <span class="tag">Django</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bug/">
+                        <span class="tag">bug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tensorflow/">
+                        <span class="tag">tensorflow</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小花样/">
+                        <span class="tag">小花样</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模型优化/">
+                        <span class="tag">模型优化</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度学习/">
+                        <span class="tag">深度学习</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/远程连接/">
+                        <span class="tag">远程连接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/面试经验/">
+                        <span class="tag">面试经验</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8b15341149dd72c215e2e84f172591d2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/icon.png" alt="Ubuntu18-0-4仿Mac界面" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Eric Tuan&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white " target="_blank" title="简书" href="https://www.jianshu.com/u/0282253a3890">
+                        
+                        简书
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="My GitHub" href="https://github.com/EricTuan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
