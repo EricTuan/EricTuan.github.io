@@ -267,35 +267,6 @@ var _hmt = _hmt || [];
 
     </div>
 </div>
-
-
-
-    <div id="toc-div" class="toc-article">
-        <strong class="toc-title">Index</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#os-listdir-path"><span class="toc-number">1.</span> <span class="toc-text">os.listdir(path)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#walk-top-topdown-True-onerror-None-followlinks-False"><span class="toc-number">2.</span> <span class="toc-text">walk(top, topdown=True, onerror=None, followlinks=False)</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#3-另附os-path模块"><span class="toc-number"></span> <span class="toc-text">3. 另附os.path模块</span></a>
-        
-    </li></div>
-
-<a id="more"></a>
-<h2 id="os-listdir-path"><a href="#os-listdir-path" class="headerlink" title="os.listdir(path)"></a>os.listdir(path)</h2><p>返回指定的文件夹包含的文件或文件夹的名字的列表</p>
-<h2 id="walk-top-topdown-True-onerror-None-followlinks-False"><a href="#walk-top-topdown-True-onerror-None-followlinks-False" class="headerlink" title="walk(top, topdown=True, onerror=None, followlinks=False)"></a>walk(top, topdown=True, onerror=None, followlinks=False)</h2><p>参数</p>
-<ul>
-<li>top 是你所要遍历的目录的地址</li>
-<li>topdown 为真，则优先遍历top目录，否则优先遍历top的子目录(默认为开启)</li>
-<li>onerror 需要一个 callable 对象，当walk需要异常时，会调用</li>
-<li>followlinks 如果为真，则会遍历目录下的快捷方式(linux 下是 symbolic link)实际所指的目录(默认关闭)</li>
-</ul>
-<p>os.walk 的返回值是一个<strong>生成器</strong>(generator),也就是说我们需要不断的遍历它，来获得所有的内容。<br>每次遍历的对象都是返回的是一个三元组(root,dirs,files)</p>
-<ul>
-<li>root 所指的是当前正在遍历的这个文件夹的本身的地址</li>
-<li>dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)</li>
-<li>files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)</li>
-</ul>
-<p>一个使用例子，利用生成器，每次用.<strong>next</strong>()取得一个返回值，送入函数处理，直到所有的值已取得：<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root_dirs_files = os.walk(folderpath)</span><br><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        your_function(root_dirs_files.__next__())</span><br><span class="line">    except StopIteration:</span><br><span class="line">        break</span><br></pre></td></tr></table></figure></p>
-<p>一个小提示：在python 3.x中 generator（有yield关键字的函数则会被识别为generator函数）中的next变为<code>__next__</code>了,next是python 3.x以前版本中的方法</p>
-<h1 id="3-另附os-path模块"><a href="#3-另附os-path模块" class="headerlink" title="3. 另附os.path模块"></a>3. 另附os.path模块</h1><p>os.path.abspath(path) #返回绝对路径<br>os.path.basename(path) #返回文件名<br>os.path.commonprefix(list) #返回list(多个路径)中，所有path共有的最长的路径。<br><strong>os.path.dirname(path) #返回文件路径<br>os.path.exists(path)  #路径存在则返回True,路径损坏返回False</strong><br>os.path.lexists  #路径存在则返回True,路径损坏也返回True<br>os.path.expanduser(path)  #把path中包含的”~”和”~user”转换成用户目录<br>os.path.expandvars(path)  #根据环境变量的值替换path中包含的”$name”和”${name}”<br>os.path.getatime(path)  #返回最后一次进入此path的时间。<br>os.path.getmtime(path)  #返回在此path下最后一次修改的时间。<br>os.path.getctime(path)  #返回path的大小<br>os.path.getsize(path)  #返回文件大小，如果文件不存在就返回错误<br>os.path.isabs(path)  #判断是否为绝对路径<br><strong>os.path.isfile(path)  #判断路径是否为文件<br>os.path.isdir(path)  #判断路径是否为目录</strong><br>os.path.islink(path)  #判断路径是否为链接<br>os.path.ismount(path)  #判断路径是否为挂载点（）<br><strong>os.path.join(path1[, path2[, …]])  #把目录和文件名合成一个路径</strong><br>os.path.normcase(path)  #转换path的大小写和斜杠<br>os.path.normpath(path)  #规范path字符串形式<br>os.path.realpath(path)  #返回path的真实路径<br>os.path.relpath(path[, start])  #从start开始计算相对路径<br>os.path.samefile(path1, path2)  #判断目录或文件是否相同<br>os.path.sameopenfile(fp1, fp2)  #判断fp1和fp2是否指向同一文件<br>os.path.samestat(stat1, stat2)  #判断stat tuple stat1和stat2是否指向同一个文件<br><strong>os.path.split(path)  #把路径分割成dirname和basename，返回一个元组</strong><br>os.path.splitdrive(path)   #一般用在windows下，返回驱动器名和路径组成的元组<br>os.path.splitext(path)  #分割路径，返回路径名和文件扩展名的元组<br>os.path.splitunc(path)  #把路径分割为加载点与文件<br><strong>os.path.walk(path, visit, arg)  #遍历path，进入每个目录都调用visit函数，visit函数必须有<br>3个参数(arg, dirname, names)，dirname表示当前目录的目录名，names代表当前目录下的所有<br>文件名，args则为walk的第三个参数</strong><br>os.path.supports_unicode_filenames  #设置是否支持unicode路径名</p>
-<p>参考：<br><a href="https://www.jianshu.com/p/bbad16822eab" target="_blank" rel="noopener">python中os.walk的用法</a><br><a href="https://www.cnblogs.com/dkblog/archive/2011/03/25/1995537.html" target="_blank" rel="noopener">python os.path模块</a></p>
 </div>
                 
 
@@ -753,25 +724,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
@@ -784,6 +736,25 @@ var _hmt = _hmt || [];
                     <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
                 </div>
             </div>

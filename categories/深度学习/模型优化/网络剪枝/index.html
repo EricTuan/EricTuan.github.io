@@ -235,47 +235,6 @@ var _hmt = _hmt || [];
 
 
 
-
-    <div id="toc-div" class="toc-article">
-        <strong class="toc-title">Index</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构"><span class="toc-number">1.</span> <span class="toc-text">结构</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#剪枝"><span class="toc-number"></span> <span class="toc-text">剪枝</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#量化"><span class="toc-number">1.</span> <span class="toc-text">量化</span></a></li></ol>
-        
-    </li></div>
-
-<a id="more"></a>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p><img src="https://upload-images.jianshu.io/upload_images/15197627-3542b26b1924daa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理流程图"><br><img src="https://upload-images.jianshu.io/upload_images/15197627-7c6cbb7d01f29a75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="处理流程图-中文"></p>
-<p>以上是Deep compression中所述的神经网络压缩方法，主要包括三个步骤：</p>
-<ul>
-<li>剪枝：将部分很小的（认为不重要的）权值设为0，使权值矩阵转为一个稀疏矩阵</li>
-<li>量化：将剪枝后保留的权值进行量化，使剪枝后保留的权值共享一些的使用一些值，这样可以减小保存权值使用的空间，进一步压缩所需要的存储空间</li>
-<li>霍夫曼编码（可选）：霍夫曼编码是一种编码形式，可以减小数据的保存需要的存储空间<h1 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h1>剪枝生成的稀疏矩阵：首先是剪枝，首先通过正常训练相应的网络，然后设置一个阈值，<strong>把绝对值小于阈值的连接置为0</strong>，然后重新对网络进行训练，重复上面两个步骤来减少相应的权重连接。然后我们得到的是一个稀疏的权值矩阵。</li>
-</ul>
-<p>由此权值矩阵可以使用存储稀疏矩阵的压缩存储方式存储，例如<a href="https://blog.csdn.net/liuconey/article/details/51260701" target="_blank" rel="noopener">CSR(Compressed Sparse Row format)和CSC(Compressed Spare Column format)</a>。该论文在CSR和CSC的基础上，将index上的值由绝对坐标转为偏移量。<br>通过CSC得到了压缩的矩阵，可以通过差分存储进一步压缩存储数量。例如我们想用三比特的值来存储相应的Index。</p>
-<p>3bit可以容忍的间距为8</p>
-<ul>
-<li>当间距小于8时：用3比特的值就可以恢复出相应的位置</li>
-<li>当间距大于8时：在第8个位置插入0值，然后用3bit的与插入的0值的差分位置恢复出相应的位置</li>
-<li>间距大于8的倍数时：每隔8个位置插入0值，与最后一个0值的3bit的差分位置恢复出位置</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/15197627-976b6b8baaef294e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="purning"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15197627-9a2172901b523fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<ol>
-<li>Learning the connectivity via normal network training.</li>
-</ol>
-<p>通过正常方法训练网络</p>
-<ol start="2">
-<li>We prune the small-weight connections: all connections with weights below a threshold are removed from the network.</li>
-</ol>
-<p>将小于某个阈值的权重扔掉，设为0不再训练</p>
-<ol start="3">
-<li>We retrain the network to learn the final weights for the remaining sparse connections.</li>
-</ol>
-<p>重新训练相应的网络剩下的权重</p>
-<h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>…</p>
-<p><a href="https://www.jianshu.com/p/eba41c39996b" target="_blank" rel="noopener">Deep-compression阅读笔记</a><br><a href="https://github.com/songhan/Deep-Compression-AlexNet" target="_blank" rel="noopener">Deep-Compression-AlexNet 源代码</a><br><a href="https://blog.csdn.net/may0324/article/details/52935869" target="_blank" rel="noopener">Deep Compression阅读理解及Caffe源码修改</a><br><a href="https://youtu.be/kQAhW9gh6aU" target="_blank" rel="noopener"> Deep Compression’s video from ICLR’16 best paper award presentation</a></p>
-
-
 </div>
                 
 
@@ -710,25 +669,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
@@ -741,6 +681,25 @@ var _hmt = _hmt || [];
                     <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
                 </div>
             </div>
@@ -953,25 +912,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
@@ -984,6 +924,25 @@ var _hmt = _hmt || [];
                     <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
                 </div>
             </div>

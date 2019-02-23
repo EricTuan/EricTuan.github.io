@@ -208,22 +208,6 @@ var _hmt = _hmt || [];
 
 
 
-
-    <div id="toc-div" class="toc-article">
-        <strong class="toc-title">Index</strong>
-        
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#tar命令"><span class="toc-number">1.</span> <span class="toc-text">tar命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#主参数-模式-，以下参数有且只能有一个："><span class="toc-number">1.1.</span> <span class="toc-text">主参数(模式)，以下参数有且只能有一个：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#可选项："><span class="toc-number">1.2.</span> <span class="toc-text">可选项：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples"><span class="toc-number">1.3.</span> <span class="toc-text">Examples:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#unrar和7z"><span class="toc-number">2.</span> <span class="toc-text">unrar和7z</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Examples-1"><span class="toc-number">2.1.</span> <span class="toc-text">Examples:</span></a></li></ol></li></ol>
-        
-    </div>
-
-<a id="more"></a>
-<h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="主参数-模式-，以下参数有且只能有一个："><a href="#主参数-模式-，以下参数有且只能有一个：" class="headerlink" title="主参数(模式)，以下参数有且只能有一个："></a>主参数(模式)，以下参数有且只能有一个：</h3><p>-c: –create 新建一个压缩文档，即打包<br>-x: –extract,–get解压文件<br>-t: –list,查看压缩文档里的所有内容<br>-r:–append 向压缩文档里追加文件<br>-u:–update 更新原压缩包中的文件</p>
-<h3 id="可选项："><a href="#可选项：" class="headerlink" title="可选项："></a>可选项：</h3><p>-z ：用 gzip 压缩/解压缩<br>-j ：用 bzip2 压缩/解压缩<br>-v ：显示压缩/解压缩的进度条<br>-f ：使用档名（<strong>f后面不要接参数</strong>，要立即接文档名）</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.</span><br><span class="line">tar -tvf archive.tar         # List all files in archive.tar verbosely.</span><br><span class="line">tar -xf archive.tar          # Extract all files from archive.tar.</span><br></pre></td></tr></table></figure>
-<h2 id="unrar和7z"><a href="#unrar和7z" class="headerlink" title="unrar和7z"></a>unrar和7z</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unrar</span><br><span class="line">sudo apt install p7zip-full</span><br></pre></td></tr></table></figure>
-<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unrar e archive.rar</span><br><span class="line">7z x archive.7z</span><br></pre></td></tr></table></figure>
-
-
 </div>
                 
 
@@ -658,25 +642,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
@@ -689,6 +654,25 @@ var _hmt = _hmt || [];
                     <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
                 </div>
             </div>
@@ -901,25 +885,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/22/github搭建个人博客/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
@@ -932,6 +897,25 @@ var _hmt = _hmt || [];
                     <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">dict和json格式转换</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
                     </p>
                 </div>
             </div>
