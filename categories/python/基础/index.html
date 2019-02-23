@@ -164,7 +164,199 @@ var _hmt = _hmt || [];
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-31T07:55:37.000Z">2019-01-31</time>
+                <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 174 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">python中open的模式</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<p>r 只能读（read）</p>
+<p>r+ 可读可写，不会创建不存在的文件，如果直接写文件，则从顶部开始写，覆盖之前此位置的内容，如果先读后写，则会在文件最后追加内容（read+）</p>
+<p>w 只能写，覆盖整个文件，不存在则创建 （write）</p>
+<p>w+可读可写，如果文件存在则覆盖整个文件，不存在则创建 (write+)</p>
+<p>a 只能写，从文件底部添加内容，不存在则创建</p>
+<p>a+ 可读可写，从文件顶部读取内容，从文件底部添加内容，不存在则创建</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-02T07:55:37.000Z">2019-01-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/dict/">dict</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 203 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">python-带默认值字典dict(可实现一对多)</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-dict-setdefault"><a href="#1-dict-setdefault" class="headerlink" title="1. dict.setdefault()"></a>1. dict.setdefault()</h1><p>该接收两个参数，第一个参数是健的名称，第二个参数是默认值。假如字典中不存在给定的键，则返回参数中提供的默认值；反之，则返回字典中保存的值<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict.setdefault(kw, 0) # 默认值设为0</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, []) # 默认值为空列表</span><br><span class="line">dict.setdefault(kw, []).append(value) # 把value增加到kw对应的键值列表中，实现了一对多</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, &#123;&#125;) # 默认值为空字典 # 可实现字典嵌套</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-defaultdict类"><a href="#2-defaultdict类" class="headerlink" title="2. defaultdict类"></a>2. defaultdict类</h1><p>collections.defaultdict提供了默认值的功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">dd = defaultdict(list) # 默认值为空列表形式</span><br><span class="line">dd[&apos;key&apos;].append(value1)  # &#123;&quot;key&quot;: [value1]&#125;</span><br><span class="line">dd[&apos;key&apos;].append(value2)  # &#123;&quot;key&quot;: [value1, value2]&#125; , 一个键值可以对应多个value</span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="http://kodango.com/understand-defaultdict-in-python" target="_blank" rel="noopener">理解 Python 语言中的 defaultdict</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 151 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/01/python-可变参数/">python-可变参数</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-args-数组参数"><a href="#1-args-数组参数" class="headerlink" title="1. *args  数组参数"></a>1. *args  数组参数</h1><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-kwargs-字典参数"><a href="#2-kwargs-字典参数" class="headerlink" title="2. **kwargs 字典参数"></a>2. **kwargs 字典参数</h1><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="https://www.cnblogs.com/jdy113/p/8051839.html" target="_blank" rel="noopener">简明Python 可变参数</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a few seconds read (About 18 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/01/python装饰器/">python装饰器</a>
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://blog.csdn.net/jacke121/article/details/77937465" target="_blank" rel="noopener">Python 装饰器记录总结 (终极版)</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
@@ -183,7 +375,7 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/31/python-速成集中营-—-预览版/">python-速成集中营(预览版)</a>
+                <a class="has-link-black-ter" href="/2019/01/01/python-速成集中营-—-预览版/">python-速成集中营(预览版)</a>
             
         </h1>
         <div class="content">
@@ -390,198 +582,6 @@ var _hmt = _hmt || [];
 <p>pip freeze 将会生成一个类似需要安装的包的列表，但是输出采用了 pip install 期望的格式。常见的做法就是把它们放在一个 requirements.txt 文件:</p>
 <p>requirements.txt 能够被提交到版本控制中并且作为一个应用程序的一部分。用户们可以使用 install -r 安装所有必须的包:</p>
 <h1 id="what’s-more"><a href="#what’s-more" class="headerlink" title="what’s more"></a>what’s more</h1><p><a href="http://www.pythondoc.com/pythontutorial3/classes.html" target="_blank" rel="noopener">http://www.pythondoc.com/pythontutorial3/classes.html</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 174 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">python中open的模式</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<p>r 只能读（read）</p>
-<p>r+ 可读可写，不会创建不存在的文件，如果直接写文件，则从顶部开始写，覆盖之前此位置的内容，如果先读后写，则会在文件最后追加内容（read+）</p>
-<p>w 只能写，覆盖整个文件，不存在则创建 （write）</p>
-<p>w+可读可写，如果文件存在则覆盖整个文件，不存在则创建 (write+)</p>
-<p>a 只能写，从文件底部添加内容，不存在则创建</p>
-<p>a+ 可读可写，从文件顶部读取内容，从文件底部添加内容，不存在则创建</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-02T07:55:37.000Z">2019-01-02</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/dict/">dict</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 203 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">python-带默认值字典dict(可实现一对多)</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<h1 id="1-dict-setdefault"><a href="#1-dict-setdefault" class="headerlink" title="1. dict.setdefault()"></a>1. dict.setdefault()</h1><p>该接收两个参数，第一个参数是健的名称，第二个参数是默认值。假如字典中不存在给定的键，则返回参数中提供的默认值；反之，则返回字典中保存的值<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict.setdefault(kw, 0) # 默认值设为0</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, []) # 默认值为空列表</span><br><span class="line">dict.setdefault(kw, []).append(value) # 把value增加到kw对应的键值列表中，实现了一对多</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, &#123;&#125;) # 默认值为空字典 # 可实现字典嵌套</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-defaultdict类"><a href="#2-defaultdict类" class="headerlink" title="2. defaultdict类"></a>2. defaultdict类</h1><p>collections.defaultdict提供了默认值的功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">dd = defaultdict(list) # 默认值为空列表形式</span><br><span class="line">dd[&apos;key&apos;].append(value1)  # &#123;&quot;key&quot;: [value1]&#125;</span><br><span class="line">dd[&apos;key&apos;].append(value2)  # &#123;&quot;key&quot;: [value1, value2]&#125; , 一个键值可以对应多个value</span><br></pre></td></tr></table></figure></p>
-<p>参考：<br><a href="http://kodango.com/understand-defaultdict-in-python" target="_blank" rel="noopener">理解 Python 语言中的 defaultdict</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 151 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/01/python-可变参数/">python-可变参数</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<h1 id="1-args-数组参数"><a href="#1-args-数组参数" class="headerlink" title="1. *args  数组参数"></a>1. *args  数组参数</h1><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-kwargs-字典参数"><a href="#2-kwargs-字典参数" class="headerlink" title="2. **kwargs 字典参数"></a>2. **kwargs 字典参数</h1><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
-<p>参考：<br><a href="https://www.cnblogs.com/jdy113/p/8051839.html" target="_blank" rel="noopener">简明Python 可变参数</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 18 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/01/python装饰器/">python装饰器</a>
-            
-        </h1>
-        <div class="content">
-            <p><a href="https://blog.csdn.net/jacke121/article/details/77937465" target="_blank" rel="noopener">Python 装饰器记录总结 (终极版)</a></p>
 
         </div>
         
@@ -1029,25 +1029,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/31/python-速成集中营-—-预览版/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python-速成集中营(预览版)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-31T07:55:37.000Z">2019-01-31</time></div>
-                    <a href="/2019/01/31/python-速成集中营-—-预览版/" class="has-link-black-ter is-size-6">python-速成集中营(预览版)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/23/Django入门实践/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Django入门实践">
@@ -1086,6 +1067,25 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
+            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/22/dict和json格式转换/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
@@ -1105,18 +1105,18 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
+            <a href="/2019/01/21/conda管理/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="conda管理">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-21T07:55:37.000Z">2019-01-21</time></div>
+                    <a href="/2019/01/21/conda管理/" class="has-link-black-ter is-size-6">conda管理</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/conda/">conda</a>
                     </p>
                 </div>
             </div>
@@ -1317,25 +1317,6 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/31/python-速成集中营-—-预览版/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python-速成集中营(预览版)">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-31T07:55:37.000Z">2019-01-31</time></div>
-                    <a href="/2019/01/31/python-速成集中营-—-预览版/" class="has-link-black-ter is-size-6">python-速成集中营(预览版)</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/01/23/Django入门实践/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="Django入门实践">
@@ -1374,6 +1355,25 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
+            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/22/dict和json格式转换/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="dict和json格式转换">
@@ -1393,18 +1393,18 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
-            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
+            <a href="/2019/01/21/conda管理/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="github搭建个人博客">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="conda管理">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">github搭建个人博客</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-21T07:55:37.000Z">2019-01-21</time></div>
+                    <a href="/2019/01/21/conda管理/" class="has-link-black-ter is-size-6">conda管理</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/conda/">conda</a>
                     </p>
                 </div>
             </div>
