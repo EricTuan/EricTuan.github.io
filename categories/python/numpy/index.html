@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: numpy - Eric Tuan</title>
+<title>Categoria: numpy - Eric Tuan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
+            <li><a href="/categories">Categorias</a></li>
             
             <li><a href="/categories/python/">python</a></li>
             
@@ -188,12 +188,12 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <a id="more"></a>
-<h1 id="stack"><a href="#stack" class="headerlink" title="stack()"></a>stack()</h1><h2 id="1-函数原型stack-arrays-axis-0-out-None-功能："><a href="#1-函数原型stack-arrays-axis-0-out-None-功能：" class="headerlink" title="1. 函数原型stack(arrays, axis=0, out=None),功能："></a>1. 函数原型stack(arrays, axis=0, out=None),功能：</h2><ul>
+<h2 id="stack"><a href="#stack" class="headerlink" title="stack()"></a>stack()</h2><h3 id="函数原型stack-arrays-axis-0-out-None-功能："><a href="#函数原型stack-arrays-axis-0-out-None-功能：" class="headerlink" title="函数原型stack(arrays, axis=0, out=None),功能："></a>函数原型stack(arrays, axis=0, out=None),功能：</h3><ul>
 <li>沿新轴连接数组序列。</li>
-<li>axis参数在结果的维度中指定新轴的索引。例如，如果轴=0，它将是第一个维度，如果轴=-1，它将是最后一个维度。<h2 id="2-参数："><a href="#2-参数：" class="headerlink" title="2. 参数："></a>2. 参数：</h2></li>
+<li>axis参数在结果的维度中指定新轴的索引。例如，如果轴=0，它将是第一个维度，如果轴=-1，它将是最后一个维度。<h3 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h3></li>
 <li><strong>arrays</strong> [输入为array_like的序列]<br><strong>每个array必须具有相同shape</strong>（这很重要，下文将提到）</li>
 <li><strong>axis</strong> [int类型，可选参数]<br>结果数组中的轴，输入数组沿其堆叠    </li>
-<li><strong>out</strong> [ndarray类型，可选参数]<br>放置结果的目的地<h2 id="3-如何理解axis"><a href="#3-如何理解axis" class="headerlink" title="3. 如何理解axis"></a>3. 如何理解axis</h2>下面将从<strong>slice的角度</strong>出发，分析函数是如何作用的。先看看这个例子：<br>– 单个列表作为输入<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import nump这 as np</span><br><span class="line">a = [[1,2,3], [4,5,6]]</span><br><span class="line">print(&quot;原始列表如下：&quot;)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">print(&quot;增加维度：axis = 0&quot;)</span><br><span class="line">b = np.stack(a, axis = 0)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line">print(&quot;增加维度：axis = 1&quot;)</span><br><span class="line">c = np.stack(a, axis = 1)</span><br><span class="line">print(c)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">原始列表如下：</span><br><span class="line">[[1, 2, 3], [4, 5, 6]]</span><br><span class="line">增加维度：axis = 0</span><br><span class="line">[[1 2 3]</span><br><span class="line"> [4 5 6]]</span><br><span class="line">增加维度：axis = 1</span><br><span class="line">[[1 4]</span><br><span class="line"> [2 5]</span><br><span class="line"> [3 6]]</span><br></pre></td></tr></table></figure>
+<li><strong>out</strong> [ndarray类型，可选参数]<br>放置结果的目的地<h3 id="如何理解axis"><a href="#如何理解axis" class="headerlink" title="如何理解axis"></a>如何理解axis</h3>下面将从<strong>slice的角度</strong>出发，分析函数是如何作用的。先看看这个例子：<br>– 单个列表作为输入<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">import nump这 as np</span><br><span class="line">a = [[1,2,3], [4,5,6]]</span><br><span class="line">print(&quot;原始列表如下：&quot;)</span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">print(&quot;增加维度：axis = 0&quot;)</span><br><span class="line">b = np.stack(a, axis = 0)</span><br><span class="line">print(b)</span><br><span class="line"></span><br><span class="line">print(&quot;增加维度：axis = 1&quot;)</span><br><span class="line">c = np.stack(a, axis = 1)</span><br><span class="line">print(c)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">原始列表如下：</span><br><span class="line">[[1, 2, 3], [4, 5, 6]]</span><br><span class="line">增加维度：axis = 0</span><br><span class="line">[[1 2 3]</span><br><span class="line"> [4 5 6]]</span><br><span class="line">增加维度：axis = 1</span><br><span class="line">[[1 4]</span><br><span class="line"> [2 5]</span><br><span class="line"> [3 6]]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>slice意为切片，怎么切呢？对上面这个例子中，输入只有a这个列表，但参数要求<strong>每个array必须具有相同shape</strong>，就一个输入为什么还要求相同维度？这不是莫名其妙吗，不用着急，看接下来的关于“切片”的操作分析。<br>首先在python中，关于axis = 0 , 1:</p>
@@ -277,7 +277,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         25
@@ -287,7 +287,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         29
@@ -297,7 +297,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -307,7 +307,7 @@ var _hmt = _hmt || [];
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -382,7 +382,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -587,7 +587,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12.5px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/小花样/" style="font-size: 12.5px;">小花样</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 12.5px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
     </div>
@@ -601,7 +601,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -707,7 +707,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -731,7 +731,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -889,7 +889,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -995,7 +995,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1019,7 +1019,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1342,10 +1342,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',

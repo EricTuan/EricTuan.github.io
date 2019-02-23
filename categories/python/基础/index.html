@@ -2,7 +2,7 @@
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>Category: 基础 - Eric Tuan</title>
+<title>Categoria: 基础 - Eric Tuan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -148,7 +148,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/categories">Categories</a></li>
+            <li><a href="/categories">Categorias</a></li>
             
             <li><a href="/categories/python/">python</a></li>
             
@@ -239,8 +239,8 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <a id="more"></a>
-<h1 id="1-dict-setdefault"><a href="#1-dict-setdefault" class="headerlink" title="1. dict.setdefault()"></a>1. dict.setdefault()</h1><p>该接收两个参数，第一个参数是健的名称，第二个参数是默认值。假如字典中不存在给定的键，则返回参数中提供的默认值；反之，则返回字典中保存的值<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict.setdefault(kw, 0) # 默认值设为0</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, []) # 默认值为空列表</span><br><span class="line">dict.setdefault(kw, []).append(value) # 把value增加到kw对应的键值列表中，实现了一对多</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, &#123;&#125;) # 默认值为空字典 # 可实现字典嵌套</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-defaultdict类"><a href="#2-defaultdict类" class="headerlink" title="2. defaultdict类"></a>2. defaultdict类</h1><p>collections.defaultdict提供了默认值的功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">dd = defaultdict(list) # 默认值为空列表形式</span><br><span class="line">dd[&apos;key&apos;].append(value1)  # &#123;&quot;key&quot;: [value1]&#125;</span><br><span class="line">dd[&apos;key&apos;].append(value2)  # &#123;&quot;key&quot;: [value1, value2]&#125; , 一个键值可以对应多个value</span><br></pre></td></tr></table></figure></p>
+<h2 id="dict-setdefault"><a href="#dict-setdefault" class="headerlink" title="dict.setdefault()"></a>dict.setdefault()</h2><p>该接收两个参数，第一个参数是健的名称，第二个参数是默认值。假如字典中不存在给定的键，则返回参数中提供的默认值；反之，则返回字典中保存的值<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict.setdefault(kw, 0) # 默认值设为0</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, []) # 默认值为空列表</span><br><span class="line">dict.setdefault(kw, []).append(value) # 把value增加到kw对应的键值列表中，实现了一对多</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, &#123;&#125;) # 默认值为空字典 # 可实现字典嵌套</span><br></pre></td></tr></table></figure></p>
+<h2 id="defaultdict类"><a href="#defaultdict类" class="headerlink" title="defaultdict类"></a>defaultdict类</h2><p>collections.defaultdict提供了默认值的功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">dd = defaultdict(list) # 默认值为空列表形式</span><br><span class="line">dd[&apos;key&apos;].append(value1)  # &#123;&quot;key&quot;: [value1]&#125;</span><br><span class="line">dd[&apos;key&apos;].append(value2)  # &#123;&quot;key&quot;: [value1, value2]&#125; , 一个键值可以对应多个value</span><br></pre></td></tr></table></figure></p>
 <p>参考：<br><a href="http://kodango.com/understand-defaultdict-in-python" target="_blank" rel="noopener">理解 Python 语言中的 defaultdict</a></p>
 
         </div>
@@ -287,54 +287,9 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <a id="more"></a>
-<h1 id="1-args-数组参数"><a href="#1-args-数组参数" class="headerlink" title="1. *args  数组参数"></a>1. *args  数组参数</h1><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
-<h1 id="2-kwargs-字典参数"><a href="#2-kwargs-字典参数" class="headerlink" title="2. **kwargs 字典参数"></a>2. **kwargs 字典参数</h1><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
+<h2 id="args-数组参数"><a href="#args-数组参数" class="headerlink" title="*args  数组参数"></a>*args  数组参数</h2><p>argsFunc 中匹配完定义好的参数，<strong>剩余的参数以元组的形式存储在 args</strong>（args 名称你可以自行定义）<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def argsFunc(a, *args):</span><br><span class="line">    print(a)</span><br><span class="line">    print(args)</span><br><span class="line">    </span><br><span class="line">&gt;&gt;&gt; argsFunc(1, 2, 3, 4)</span><br><span class="line">1</span><br><span class="line">(2, 3, 4)</span><br></pre></td></tr></table></figure></p>
+<h2 id="kwargs-字典参数"><a href="#kwargs-字典参数" class="headerlink" title="**kwargs 字典参数"></a>**kwargs 字典参数</h2><p>形参名前加两个*表示，参数在函数内部将被存放在以形式名为标识符的 dictionary 中，这时调用函数的方法则需要采用 arg1=value1,arg2=value2 这样的形式<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; def a(**x):print x</span><br><span class="line">&gt;&gt;&gt; a(x=1,y=2,z=3)</span><br><span class="line">&#123;&apos;y&apos;: 2, &apos;x&apos;: 1, &apos;z&apos;: 3&#125; #存放在字典中</span><br></pre></td></tr></table></figure></p>
 <p>参考：<br><a href="https://www.cnblogs.com/jdy113/p/8051839.html" target="_blank" rel="noopener">简明Python 可变参数</a></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a few seconds read (About 18 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/01/python装饰器/">python装饰器</a>
-            
-        </h1>
-        <div class="content">
-            <p><a href="https://blog.csdn.net/jacke121/article/details/77937465" target="_blank" rel="noopener">Python 装饰器记录总结 (终极版)</a></p>
 
         </div>
         
@@ -613,6 +568,51 @@ var _hmt = _hmt || [];
                 <span class="level-item has-text-grey">
                     
                     
+                    a few seconds read (About 18 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/01/python装饰器/">python装饰器</a>
+            
+        </h1>
+        <div class="content">
+            <p><a href="https://blog.csdn.net/jacke121/article/details/77937465" target="_blank" rel="noopener">Python 装饰器记录总结 (终极版)</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
                     7 minutes read (About 984 words)
                 </span>
                 
@@ -627,8 +627,8 @@ var _hmt = _hmt || [];
         </h1>
         <div class="content">
             <a id="more"></a>
-<h1 id="1-os-listdir-path"><a href="#1-os-listdir-path" class="headerlink" title="1. os.listdir(path)"></a>1. os.listdir(path)</h1><p>返回指定的文件夹包含的文件或文件夹的名字的列表</p>
-<h1 id="2-walk-top-topdown-True-onerror-None-followlinks-False"><a href="#2-walk-top-topdown-True-onerror-None-followlinks-False" class="headerlink" title="2. walk(top, topdown=True, onerror=None, followlinks=False)"></a>2. walk(top, topdown=True, onerror=None, followlinks=False)</h1><p>参数</p>
+<h2 id="os-listdir-path"><a href="#os-listdir-path" class="headerlink" title="os.listdir(path)"></a>os.listdir(path)</h2><p>返回指定的文件夹包含的文件或文件夹的名字的列表</p>
+<h2 id="walk-top-topdown-True-onerror-None-followlinks-False"><a href="#walk-top-topdown-True-onerror-None-followlinks-False" class="headerlink" title="walk(top, topdown=True, onerror=None, followlinks=False)"></a>walk(top, topdown=True, onerror=None, followlinks=False)</h2><p>参数</p>
 <ul>
 <li>top 是你所要遍历的目录的地址</li>
 <li>topdown 为真，则优先遍历top目录，否则优先遍历top的子目录(默认为开启)</li>
@@ -700,7 +700,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         25
@@ -710,7 +710,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         29
@@ -720,7 +720,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         19
@@ -730,7 +730,7 @@ var _hmt = _hmt || [];
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -805,7 +805,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -1010,7 +1010,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12.5px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/小花样/" style="font-size: 12.5px;">小花样</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 12.5px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
     </div>
@@ -1024,7 +1024,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -1130,7 +1130,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1154,7 +1154,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1312,7 +1312,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -1418,7 +1418,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1442,7 +1442,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1765,10 +1765,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
