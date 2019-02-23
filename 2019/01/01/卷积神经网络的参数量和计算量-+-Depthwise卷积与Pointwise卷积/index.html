@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>通过在vscode配置sftp, 远程修改服务器文件 - Eric Tuan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="1. 感受野终于在知乎上中找到深度神经网络中的感受野(Receptive Field) - 蓝荣祎的文章 - 知乎http://zhuanlan.zhihu.com/p/28492837 算是弄清了基本原理，记录以备忘 1.先举个例子： e.g.两层 3*3 卷积操作的有效区域(感受野)是5*5 (所有filter的stride=1,pad=0),示意图如下：   三层3*3卷积核操作的有效区域">
+<meta name="keywords" content="深度学习,模型优化,CNN">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过在vscode配置sftp, 远程修改服务器文件">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/卷积神经网络的参数量和计算量-+-Depthwise卷积与Pointwise卷积/index.html">
+<meta property="og:site_name" content="Eric Tuan">
+<meta property="og:description" content="1. 感受野终于在知乎上中找到深度神经网络中的感受野(Receptive Field) - 蓝荣祎的文章 - 知乎http://zhuanlan.zhihu.com/p/28492837 算是弄清了基本原理，记录以备忘 1.先举个例子： e.g.两层 3*3 卷积操作的有效区域(感受野)是5*5 (所有filter的stride=1,pad=0),示意图如下：   三层3*3卷积核操作的有效区域">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-38c7b569e00b0fc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/607/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-0389802e6cbc348f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/782/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-3bde62b30ab8f363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-88a7d91b539cdf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-17a499751301c514.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/605/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-0b567801440ed800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-112c481c802ff042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/705/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-57a944e1d04ad6d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-1cc3443d4819f9db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390/format/webp">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/9070639-919995d8e09b745b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/239/format/webp">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15197627-68d4f9e4c71c97f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15197627-2a53ca8406d323ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15197627-c3d8879a108a08a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15197627-92b2917b9468bfd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15197627-cd8777b1916abf26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-23T06:30:04.630Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="通过在vscode配置sftp, 远程修改服务器文件">
+<meta name="twitter:description" content="1. 感受野终于在知乎上中找到深度神经网络中的感受野(Receptive Field) - 蓝荣祎的文章 - 知乎http://zhuanlan.zhihu.com/p/28492837 算是弄清了基本原理，记录以备忘 1.先举个例子： e.g.两层 3*3 卷积操作的有效区域(感受野)是5*5 (所有filter的stride=1,pad=0),示意图如下：   三层3*3卷积核操作的有效区域">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/9070639-38c7b569e00b0fc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/607/format/webp">
+
+
+
+
+
+<link rel="icon" href="/images/logo.png">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?8b15341149dd72c215e2e84f172591d2";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-2-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/icon.png" alt="通过在vscode配置sftp, 远程修改服务器文件" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="My GitHub" href="https://github.com/EricTuan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-9-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-01T07:55:37.000Z">2019-01-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/深度学习/">深度学习</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/深度学习/模型优化/">模型优化</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/深度学习/模型优化/参数量和计算量/">参数量和计算量</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    14 minutes read (About 2098 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                通过在vscode配置sftp, 远程修改服务器文件
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-感受野"><a href="#1-感受野" class="headerlink" title="1. 感受野"></a>1. 感受野</h1><p>终于在知乎上中找到<a href="https://link.jianshu.com?t=https%3A%2F%2Fzhuanlan.zhihu.com%2Fp%2F22627224" target="_blank" rel="noopener">深度神经网络中的感受野(Receptive Field) - 蓝荣祎的文章 - 知乎<br>http://zhuanlan.zhihu.com/p/28492837</a> 算是弄清了基本原理，记录以备忘</p>
+<h4 id="1-先举个例子："><a href="#1-先举个例子：" class="headerlink" title="1.先举个例子："></a>1.先举个例子：</h4><ul>
+<li><p>e.g.两层 <code>3*3</code> 卷积操作的有效区域(感受野)是<code>5*5</code> (所有filter的stride=1,pad=0),示意图如下：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-38c7b569e00b0fc6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/607/format/webp" alt="image"></p>
+</li>
+<li><p>三层<code>3*3</code>卷积核操作的有效区域是<code>7*7</code> (所有filter的stride=1，pad=0),示意图如下：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-0389802e6cbc348f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/782/format/webp" alt="image"></p>
+</li>
+</ul>
+<h4 id="2-基本定义："><a href="#2-基本定义：" class="headerlink" title="2. 基本定义："></a>2. 基本定义：</h4><ul>
+<li><strong>定义：</strong>感受野用来表示网络内部的不同神经元对原图像的感受范围的大小，或者说，convNets(cnn)每一层输出的特征图(feature map)上的像素点在原始图像上映射的区域大小。</li>
+<li>神经元之所以无法对原始图像的所有信息进行感知，是因为在这些网络结构中普遍使用卷积层和pooling层，在层与层之间均为局部连接。</li>
+<li>神经元感受野的值越大表示其能接触到的原始图像范围就越大，也意味着它可能蕴含更为全局，语义层次更高的特征；相反，值越小则表示其所包含的特征越趋向局部和细节。因此感受野的值可以用来大致判断每一层的抽象层次。</li>
+</ul>
+<h4 id="3-感受野的计算"><a href="#3-感受野的计算" class="headerlink" title="3. 感受野的计算"></a>3. 感受野的计算</h4><ul>
+<li><p><img src="//upload-images.jianshu.io/upload_images/9070639-3bde62b30ab8f363.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/981/format/webp" alt="image"></p>
+<p>可以看到在Conv1中的每一个单元所能看到的原始图像范围是<code>3*3</code>，而由于Conv2的每个单元都是由 <code>2*2</code>范围的Conv1构成，因此回溯到原始图像，其实是能够看到<code>5*5</code>的原始图像范围的。因此我们说Conv1的感受野是3，Conv2的感受野是5. 输入图像的每个单元的感受野被定义为1，这应该很好理解，因为每个像素只能看到自己。</p>
+</li>
+</ul>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-88a7d91b539cdf7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000/format/webp" alt="image"></p>
+<p>在上图中，数字代表某单元能够看到的原始图像像素，我们用<strong>r_n表示第n个卷积层中，每个单元的感受野，用k_n和s_n表示第n个卷积层的kernel_size和stride</strong>.<br>对Raw Image进行kernel_size=3, stride 2的卷积操作所得到的fmap1 (fmap为feature map的简称，为每一个conv层所产生的输出)的结果是显而易见的。序列[1 2 3]表示fmap1的第一个单元能看见原图像中的1，2，3这三个像素，而第二个单元则能看见3，4，5。这两个单元随后又被kernel_size=2，stride 1的Filter 2进行卷积，因而得到的fmap2的第一个单元能够看见原图像中的1,2,3,4,5共5个像素（即取[1 2 3]和[3 4 5]的并集）。接下来我们尝试一下如何用公式来表述上述过程。可以看到，[1 2 3]和[3 4 5]之间因为Filter 1的stride 2而错开（偏移）了两位，而3是重叠的。对于卷积两个感受野为3的上层单元，下一层最大能获得的感受野为 3*2=6，但因为有重叠，因此要减去(kernel_size - 1)个重叠部分，而重叠部分的计算方式则为感受野减去前面所说的偏移量，这里是2. 因此我们就得到</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-17a499751301c514.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/605/format/webp" alt="image"></p>
+<p>继续往下一层看，我们会发现[1 2 3 4 5]和[3 4 5 6 7]的偏移量仍为2，并不简单地等于上一层的s_2, 这是因为之前的stride对后续层的影响是永久性的，而且是<strong>累积相乘</strong>的关系（例如，在fmap3中，偏移量已经累积到4了），也就是说 r_3应该这样求</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-0b567801440ed800.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/650/format/webp" alt="image"></p>
+<p>同理：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-112c481c802ff042.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/705/format/webp" alt="image"></p>
+<p>。。。。。。可抽象如下：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-57a944e1d04ad6d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390/format/webp" alt="image"></p>
+<p>理解：第n个卷积层的感受野等于前一个卷积层的感受野输出再乘以第n卷积层的kernel_size,即第n卷积层要合并多少个，这里算出的是总的量，还要减去之间有重复的量，第n卷积层总共要合并k_n个，那么前后两两相比较，空隙共有k_n-1个，比如说：第一层和第二层有重复，第二层和第三层也有重复等等，然后就要计算每两个之间重复的量有多少，首先每层共有r_n-1个数字，需要减去往右偏移的量，即stride，第1卷积层的stride_1,第二层会在第一层的基础上偏移stride_2,即总共偏移了 stride_1*stride_2,即偏移量是一个乘积的累计效果，所以式子如下：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-1cc3443d4819f9db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390/format/webp" alt="image"></p>
+<p>经过去括号简化。可得下面式子：</p>
+<p><img src="//upload-images.jianshu.io/upload_images/9070639-919995d8e09b745b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/239/format/webp" alt="image"></p>
+<p>参考：<a href="https://www.jianshu.com/p/2b968e7a1715" target="_blank" rel="noopener">Receptive field(感受野)</a></p>
+<h1 id="2-全局平均池化（GAP）"><a href="#2-全局平均池化（GAP）" class="headerlink" title="2. 全局平均池化（GAP）"></a>2. 全局平均池化（GAP）</h1><p>所谓的全局就是针对常用的平均池化而言，平均池化会有它的filter size，比如 2 * 2，全局平均池化就没有size，它针对的是整张feature map.</p>
+<p>全局平均池化（Global average Pooling）由 M. Lin, Q. Chen, and S. Yan. Network in network. Interna-<br>tional Conference on Learning Representations, 2014.提出来。</p>
+<p>用个简单的例子来说明它的过程，作用请看原文献或者<a href="https://www.baidu.com/s?wd=%E7%99%BE%E5%BA%A6&amp;tn=24004469_oem_dg&amp;rsv_dl=gh_pl_sl_csd" target="_blank" rel="noopener">百度</a>。<br><img src="https://upload-images.jianshu.io/upload_images/15197627-68d4f9e4c71c97f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>一个feature map <strong>全局平均池化后得到一个值</strong>，再进行全连接（softmax）就会少很多参数。<br>参考：<a href="https://blog.csdn.net/u014264373/article/details/80516294" target="_blank" rel="noopener">对全局平均池化（GAP）过程的理解</a></p>
+<h1 id="3-卷积神经网络的复杂度分析"><a href="#3-卷积神经网络的复杂度分析" class="headerlink" title="3. 卷积神经网络的复杂度分析"></a>3. 卷积神经网络的复杂度分析</h1><p>单个卷积层的时间复杂度<br><img src="https://upload-images.jianshu.io/upload_images/15197627-2a53ca8406d323ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>卷积神经网络整体的时间复杂度<br><img src="https://upload-images.jianshu.io/upload_images/15197627-c3d8879a108a08a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>空间复杂度（访存量），严格来讲包括两部分：总参数量 + 各层输出特征图。</p>
+<ul>
+<li><strong>参数量</strong>：模型所有带参数的层的权重参数总量（即<strong>模型体积</strong>，下式第一个求和表达式）</li>
+<li><strong>特征图</strong>：模型在实时运行过程中每层所计算出的输出特征图大小（下式第二个求和表达式）<br><img src="https://upload-images.jianshu.io/upload_images/15197627-92b2917b9468bfd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/31575074" target="_blank" rel="noopener">时间复杂度和空间复杂度计算，Inception 系列模型是如何优化复杂度的</a><br><a href="https://imlogm.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/vgg-complexity/" target="_blank" rel="noopener">以VGG为例，分析深度网络的计算量和参数量</a><br><a href="https://blog.csdn.net/wuzqchom/article/details/74785643" target="_blank" rel="noopener">TensorFlow中CNN的两种padding方式“SAME”和“VALID”</a><br><img src="https://upload-images.jianshu.io/upload_images/15197627-cd8777b1916abf26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="padding"></p>
+<h1 id="让深度学习更高效运行的两个视角"><a href="#让深度学习更高效运行的两个视角" class="headerlink" title="让深度学习更高效运行的两个视角"></a>让深度学习更高效运行的两个视角</h1><p>当这个应用程序的计算密度大于一定值之后，将会变成一个受算术逻辑单元的计算量所限制的程序；而这个计算密度如果小于一定值，将会变成一个受存储器带宽所限制的程序。<br><a href="https://blog.csdn.net/dcrmg/article/details/79652682" target="_blank" rel="noopener">计算量和访存量</a></p>
+<h1 id="Depthwise卷积与Pointwise卷积"><a href="#Depthwise卷积与Pointwise卷积" class="headerlink" title="Depthwise卷积与Pointwise卷积"></a>Depthwise卷积与Pointwise卷积</h1><p><a href="https://blog.csdn.net/tintinetmilou/article/details/81607721" target="_blank" rel="noopener">Depthwise Separable Convolution是将一个完整的卷积运算分解为两步进行，即Depthwise Convolution与Pointwise Convolution</a></p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/CNN/">CNN</a>, <a class="has-link-grey -link" href="/tags/模型优化/">模型优化</a>, <a class="has-link-grey -link" href="/tags/深度学习/">深度学习</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/01/01/一些命令/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">通过在vscode配置sftp, 远程修改服务器文件</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/01/01/python-可变参数/">
+                <span class="level-item">通过在vscode配置sftp, 远程修改服务器文件</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<div id="valine-thread"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: true,
+        verify: true,
+        app_id: 'PzIDKsINGEVyzQ0vK2G0SDnI-gzGzoHsz',
+        app_key: '8Fv1MqWLG2XiOo5SRLxzimib',
+        placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+    });
+</script>
+
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-2-tablet is-2-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/post_gallery/my_title.jpg" alt="Eric Tuan">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Eric Tuan
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        人世间 酸甜苦辣 若长良川
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        26
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        29
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        20
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/EricTuan">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="简书" href="https://www.jianshu.com/u/0282253a3890">
+                
+                简书
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc" style="max-height: 400px;overflow: auto;">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-感受野">
+        <span class="has-mr-6">1</span>
+        <span>1. 感受野</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#1-先举个例子：">
+        <span class="has-mr-6">1.1</span>
+        <span>1.先举个例子：</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-基本定义：">
+        <span class="has-mr-6">1.2</span>
+        <span>2. 基本定义：</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-感受野的计算">
+        <span class="has-mr-6">1.3</span>
+        <span>3. 感受野的计算</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-全局平均池化（GAP）">
+        <span class="has-mr-6">2</span>
+        <span>2. 全局平均池化（GAP）</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-卷积神经网络的复杂度分析">
+        <span class="has-mr-6">3</span>
+        <span>3. 卷积神经网络的复杂度分析</span>
+        </a></li><li>
+        <a class="is-flex" href="#让深度学习更高效运行的两个视角">
+        <span class="has-mr-6">4</span>
+        <span>让深度学习更高效运行的两个视角</span>
+        </a></li><li>
+        <a class="is-flex" href="#Depthwise卷积与Pointwise卷积">
+        <span class="has-mr-6">5</span>
+        <span>Depthwise卷积与Pointwise卷积</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Links
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://github.com/EricTuan" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">EricTuan</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">github.com</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://www.jianshu.com/u/0282253a3890" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">段浩然</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.jianshu.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/github/">
+            <span class="level-start">
+                <span class="level-item">github</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/github/个人博客/">
+            <span class="level-start">
+                <span class="level-item">个人博客</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/linux/">
+            <span class="level-start">
+                <span class="level-item">linux</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">5</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/linux/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/主题美化/">
+            <span class="level-start">
+                <span class="level-item">主题美化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/命令/">
+            <span class="level-start">
+                <span class="level-item">命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/解压/">
+            <span class="level-start">
+                <span class="level-item">解压</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/软件安装/">
+            <span class="level-start">
+                <span class="level-item">软件安装</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/python/">
+            <span class="level-start">
+                <span class="level-item">python</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/python/Django/">
+            <span class="level-start">
+                <span class="level-item">Django</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/bug/">
+            <span class="level-start">
+                <span class="level-item">bug</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/conda/">
+            <span class="level-start">
+                <span class="level-item">conda</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/import模块/">
+            <span class="level-start">
+                <span class="level-item">import模块</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/json/">
+            <span class="level-start">
+                <span class="level-item">json</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/numpy/">
+            <span class="level-start">
+                <span class="level-item">numpy</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/pygal/">
+            <span class="level-start">
+                <span class="level-item">pygal</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/基础/">
+            <span class="level-start">
+                <span class="level-item">基础</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">6</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/vscode/">
+            <span class="level-start">
+                <span class="level-item">vscode</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/vscode/远程/">
+            <span class="level-start">
+                <span class="level-item">远程</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/">
+            <span class="level-start">
+                <span class="level-item">深度学习</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">4</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/深度学习/tensorflow/">
+            <span class="level-start">
+                <span class="level-item">tensorflow</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/模型优化/">
+            <span class="level-start">
+                <span class="level-item">模型优化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/深度学习/面试经验/">
+            <span class="level-start">
+                <span class="level-item">面试经验</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12.5px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/小花样/" style="font-size: 12.5px;">小花样</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 12.5px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/速成/" style="font-size: 10px;">速成</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow  is-sticky">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/23/Road2PUA/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt>
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-23T06:31:06.618Z">2019-02-23</time></div>
+                    <a href="/2019/02/23/Road2PUA/" class="has-link-black-ter is-size-6"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/31/python-速成集中营-—-预览版/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="python-速成集中营(预览版)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-31T07:55:37.000Z">2019-01-31</time></div>
+                    <a href="/2019/01/31/python-速成集中营-—-预览版/" class="has-link-black-ter is-size-6">python-速成集中营(预览版)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/23/Django入门实践/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-23T07:55:37.000Z">2019-01-23</time></div>
+                    <a href="/2019/01/23/Django入门实践/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/Django/">Django</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/Deep-Compression-论文阅读/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/Deep-Compression-论文阅读/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/深度学习/">深度学习</a> / <a class="has-link-grey -link" href="/categories/深度学习/模型优化/">模型优化</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/01/22/dict和json格式转换/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
+                    <a href="/2019/01/22/dict和json格式转换/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/python/">python</a> / <a class="has-link-grey -link" href="/categories/python/json/">json</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">January 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">25</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CNN/">
+                        <span class="tag">CNN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Django/">
+                        <span class="tag">Django</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/bug/">
+                        <span class="tag">bug</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/conda/">
+                        <span class="tag">conda</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/json/">
+                        <span class="tag">json</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/linux/">
+                        <span class="tag">linux</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/python/">
+                        <span class="tag">python</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/sftp/">
+                        <span class="tag">sftp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tensorflow/">
+                        <span class="tag">tensorflow</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/vscode/">
+                        <span class="tag">vscode</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/个人博客/">
+                        <span class="tag">个人博客</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/小花样/">
+                        <span class="tag">小花样</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/服务器/">
+                        <span class="tag">服务器</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模型优化/">
+                        <span class="tag">模型优化</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/深度学习/">
+                        <span class="tag">深度学习</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/解压/">
+                        <span class="tag">解压</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/远程连接/">
+                        <span class="tag">远程连接</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/速成/">
+                        <span class="tag">速成</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/面试经验/">
+                        <span class="tag">面试经验</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+            </div>
+        </div>
+    </section>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?8b15341149dd72c215e2e84f172591d2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/icon.png" alt="通过在vscode配置sftp, 远程修改服务器文件" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Eric Tuan&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white " target="_blank" title="简书" href="https://www.jianshu.com/u/0282253a3890">
+                        
+                        简书
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="My GitHub" href="https://github.com/EricTuan">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

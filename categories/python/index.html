@@ -586,6 +586,127 @@ var _hmt = _hmt || [];
 
 
 
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-06T07:55:37.000Z">2019-01-06</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/bug/">bug</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/bug/合集/">合集</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2 minutes read (About 270 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/06/python常见错误合集/">通过在vscode配置sftp, 远程修改服务器文件</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-引号不匹配"><a href="#1-引号不匹配" class="headerlink" title="1. 引号不匹配"></a>1. 引号不匹配</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">正确的格式:</span><br><span class="line">str1 = &apos;example 1 &apos;</span><br><span class="line">str2 = &quot;example 2 &quot;</span><br><span class="line">str3 = &quot;example &apos;3&apos; &quot;</span><br><span class="line"></span><br><span class="line">错误的格式:</span><br><span class="line">In [2]: str4 = &apos;It&apos;s example 4 &apos;  # 单引号的string内还有有撇号`&apos;`</span><br><span class="line">  File &quot;&lt;ipython-input-2-1bc6948cc597&gt;&quot;, line 1</span><br><span class="line">    str4 = &apos;It&apos;s example 4 &apos; </span><br><span class="line">               ^</span><br><span class="line">SyntaxError: invalid syntax</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">In [3]: str4 = &apos;example &apos;5&apos; &apos;</span><br><span class="line">  File &quot;&lt;ipython-input-3-ae442a900f37&gt;&quot;, line 1</span><br><span class="line">    str4 = &apos;example &apos;5&apos; &apos;</span><br><span class="line">                     ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure>
+<h1 id="2-索引错误"><a href="#2-索引错误" class="headerlink" title="2. 索引错误"></a>2. 索引错误</h1><p>常发生在列表数组等下标超过其本身的长度,可以用<code>len()</code>检查<br>有时可能是空列表</p>
+<h1 id="3-遗漏冒号"><a href="#3-遗漏冒号" class="headerlink" title="3. 遗漏冒号"></a>3. 遗漏冒号</h1><p>for循环语句、函数定义、条件语句、try-except、等</p>
+<h1 id="4-拷贝问题"><a href="#4-拷贝问题" class="headerlink" title="4. 拷贝问题"></a>4. 拷贝问题</h1><p>复制一个列表时<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">old = list(range(5))</span><br><span class="line">new = old[:]  # 正确</span><br><span class="line">new_1 = old  # 只是浅拷贝,这两个变量其实指向同一个列表</span><br></pre></td></tr></table></figure></p>
+<h1 id="5-对元组赋值"><a href="#5-对元组赋值" class="headerlink" title="5. 对元组赋值"></a>5. 对元组赋值</h1><p>元组类型不能修改其中元素,但可以对元组本身赋值等</p>
+<h1 id="6-函数传入列表"><a href="#6-函数传入列表" class="headerlink" title="6. 函数传入列表"></a>6. 函数传入列表</h1><p>这种情况下，函数中对列表的操作会修改原列表，可以传入<code>L[:]</code></p>
+<h1 id="7-import"><a href="#7-import" class="headerlink" title="7. import *"></a>7. import *</h1><p>可能遇到相同名称的函数或变量，导致覆盖</p>
+<h1 id="8-ValueError"><a href="#8-ValueError" class="headerlink" title="8. ValueError"></a>8. ValueError</h1><p>不能将带包含小数点的字符串’2.3’直接转换为整数,可以用int(float(‘2.3’))</p>
+<h1 id="more"><a href="#more" class="headerlink" title="more"></a>more</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.system(&apos;clear&apos;)</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-02T07:55:37.000Z">2019-01-02</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/dict/">dict</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 203 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/02/python-带默认值字典dict(可实现一对多)/">通过在vscode配置sftp, 远程修改服务器文件</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h1 id="1-dict-setdefault"><a href="#1-dict-setdefault" class="headerlink" title="1. dict.setdefault()"></a>1. dict.setdefault()</h1><p>该接收两个参数，第一个参数是健的名称，第二个参数是默认值。假如字典中不存在给定的键，则返回参数中提供的默认值；反之，则返回字典中保存的值<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dict.setdefault(kw, 0) # 默认值设为0</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, []) # 默认值为空列表</span><br><span class="line">dict.setdefault(kw, []).append(value) # 把value增加到kw对应的键值列表中，实现了一对多</span><br><span class="line"></span><br><span class="line">dict.setdefault(kw, &#123;&#125;) # 默认值为空字典 # 可实现字典嵌套</span><br></pre></td></tr></table></figure></p>
+<h1 id="2-defaultdict类"><a href="#2-defaultdict类" class="headerlink" title="2. defaultdict类"></a>2. defaultdict类</h1><p>collections.defaultdict提供了默认值的功能<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from collections import defaultdict</span><br><span class="line">dd = defaultdict(list) # 默认值为空列表形式</span><br><span class="line">dd[&apos;key&apos;].append(value1)  # &#123;&quot;key&quot;: [value1]&#125;</span><br><span class="line">dd[&apos;key&apos;].append(value2)  # &#123;&quot;key&quot;: [value1, value2]&#125; , 一个键值可以对应多个value</span><br></pre></td></tr></table></figure></p>
+<p>参考：<br><a href="http://kodango.com/understand-defaultdict-in-python" target="_blank" rel="noopener">理解 Python 语言中的 defaultdict</a></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/python/page/0/">Previous</a>
+        </div>
+        <div class="pagination-next">
+            <a class="is-flex-grow has-text-black-ter" href="/categories/python/page/2/">Next</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link is-current" href="/categories/python/">1</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/categories/python/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
+</div>
 </div>
                 
 
@@ -629,7 +750,7 @@ var _hmt = _hmt || [];
                         Posts
                     </p>
                     <p class="title has-text-weight-normal">
-                        14
+                        26
                     </p>
                 </div>
             </div>
@@ -639,7 +760,7 @@ var _hmt = _hmt || [];
                         Categories
                     </p>
                     <p class="title has-text-weight-normal">
-                        20
+                        29
                     </p>
                 </div>
             </div>
@@ -649,7 +770,7 @@ var _hmt = _hmt || [];
                         Tags
                     </p>
                     <p class="title has-text-weight-normal">
-                        18
+                        20
                     </p>
                 </div>
             </div>
@@ -756,12 +877,44 @@ var _hmt = _hmt || [];
                 <span class="level-item">linux</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">5</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/linux/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/主题美化/">
+            <span class="level-start">
+                <span class="level-item">主题美化</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/命令/">
+            <span class="level-start">
+                <span class="level-item">命令</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/linux/解压/">
             <span class="level-start">
                 <span class="level-item">解压</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/linux/软件安装/">
+            <span class="level-start">
+                <span class="level-item">软件安装</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -772,12 +925,20 @@ var _hmt = _hmt || [];
                 <span class="level-item">python</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">8</span>
+                <span class="level-item tag">14</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/python/Django/">
             <span class="level-start">
                 <span class="level-item">Django</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/python/bug/">
+            <span class="level-start">
+                <span class="level-item">bug</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
@@ -823,12 +984,20 @@ var _hmt = _hmt || [];
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
+        <a class="level is-marginless" href="/categories/python/tricks/">
+            <span class="level-start">
+                <span class="level-item">tricks</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/python/基础/">
             <span class="level-start">
                 <span class="level-item">基础</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">2</span>
+                <span class="level-item tag">6</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/vscode/">
@@ -852,7 +1021,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">深度学习</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">3</span>
+                <span class="level-item tag">4</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/深度学习/tensorflow/">
@@ -868,7 +1037,7 @@ var _hmt = _hmt || [];
                 <span class="level-item">模型优化</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/深度学习/面试经验/">
@@ -890,7 +1059,7 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             Tag Cloud
         </h3>
-        <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 10px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 10px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/速成/" style="font-size: 10px;">速成</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
+        <a href="/tags/CNN/" style="font-size: 10px;">CNN</a> <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/bug/" style="font-size: 12.5px;">bug</a> <a href="/tags/conda/" style="font-size: 10px;">conda</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 17.5px;">linux</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/sftp/" style="font-size: 10px;">sftp</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/个人博客/" style="font-size: 10px;">个人博客</a> <a href="/tags/小花样/" style="font-size: 12.5px;">小花样</a> <a href="/tags/服务器/" style="font-size: 10px;">服务器</a> <a href="/tags/模型优化/" style="font-size: 12.5px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 15px;">深度学习</a> <a href="/tags/解压/" style="font-size: 10px;">解压</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/速成/" style="font-size: 10px;">速成</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
     </div>
 </div>
 
@@ -904,6 +1073,25 @@ var _hmt = _hmt || [];
         <h3 class="menu-label">
             Recent
         </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/02/23/Road2PUA/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt>
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-23T06:31:06.618Z">2019-02-23</time></div>
+                    <a href="/2019/02/23/Road2PUA/" class="has-link-black-ter is-size-6"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -981,25 +1169,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1013,12 +1182,23 @@ var _hmt = _hmt || [];
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/01/">
                 <span class="level-start">
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1037,6 +1217,13 @@ var _hmt = _hmt || [];
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/CNN/">
+                        <span class="tag">CNN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Django/">
                         <span class="tag">Django</span>
                         <span class="tag is-grey">1</span>
@@ -1046,7 +1233,7 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/bug/">
                         <span class="tag">bug</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1074,14 +1261,14 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/linux/">
                         <span class="tag">linux</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/python/">
                         <span class="tag">python</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
@@ -1114,6 +1301,13 @@ var _hmt = _hmt || [];
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/小花样/">
+                        <span class="tag">小花样</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/服务器/">
                         <span class="tag">服务器</span>
                         <span class="tag is-grey">1</span>
@@ -1123,14 +1317,14 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/模型优化/">
                         <span class="tag">模型优化</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/深度学习/">
                         <span class="tag">深度学习</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -1188,6 +1382,25 @@ var _hmt = _hmt || [];
         
         <article class="media">
             
+            <a href="/2019/02/23/Road2PUA/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt>
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-23T06:31:06.618Z">2019-02-23</time></div>
+                    <a href="/2019/02/23/Road2PUA/" class="has-link-black-ter is-size-6"></a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
             <a href="/2019/01/31/python-速成集中营-—-预览版/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="python-速成集中营(预览版)">
@@ -1262,25 +1475,6 @@ var _hmt = _hmt || [];
             </div>
         </article>
         
-        <article class="media">
-            
-            <a href="/2019/01/22/github搭建个人博客/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="通过在vscode配置sftp, 远程修改服务器文件">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-01-22T07:55:37.000Z">2019-01-22</time></div>
-                    <a href="/2019/01/22/github搭建个人博客/" class="has-link-black-ter is-size-6">通过在vscode配置sftp, 远程修改服务器文件</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/github/">github</a> / <a class="has-link-grey -link" href="/categories/github/个人博客/">个人博客</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -1294,12 +1488,23 @@ var _hmt = _hmt || [];
         <ul class="menu-list">
         
         <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
             <a class="level is-marginless" href="/archives/2019/01/">
                 <span class="level-start">
                     <span class="level-item">January 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">14</span>
+                    <span class="level-item tag">25</span>
                 </span>
             </a>
         </li>
@@ -1318,6 +1523,13 @@ var _hmt = _hmt || [];
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/CNN/">
+                        <span class="tag">CNN</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/Django/">
                         <span class="tag">Django</span>
                         <span class="tag is-grey">1</span>
@@ -1327,7 +1539,7 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/bug/">
                         <span class="tag">bug</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
@@ -1355,14 +1567,14 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/linux/">
                         <span class="tag">linux</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/python/">
                         <span class="tag">python</span>
-                        <span class="tag is-grey">8</span>
+                        <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
@@ -1395,6 +1607,13 @@ var _hmt = _hmt || [];
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/小花样/">
+                        <span class="tag">小花样</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/服务器/">
                         <span class="tag">服务器</span>
                         <span class="tag is-grey">1</span>
@@ -1404,14 +1623,14 @@ var _hmt = _hmt || [];
                 <div class="control">
                     <a class="tags has-addons" href="/tags/模型优化/">
                         <span class="tag">模型优化</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/深度学习/">
                         <span class="tag">深度学习</span>
-                        <span class="tag is-grey">3</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
