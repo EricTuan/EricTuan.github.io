@@ -17,8 +17,8 @@ textarea {
 @media screen and (min-width: 1600px) {
   .is-1-column .container,
   .is-2-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1372px;
+    width: 1372px;
   }
 }
 @media screen and (min-width: 1472px) {
@@ -27,8 +27,8 @@ textarea {
     width: 1472px;
   }
   .is-1-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1372px;
+    width: 1372px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -112,7 +112,7 @@ img.thumbnail {
   color: #3273dc;
   background-color: transparent;
 }
-@media screen and (max-width: 1087px) {
+@media screen and (max-width: 1499px) {
   .navbar-main .navbar-menu {
     justify-content: center;
     box-shadow: none;
