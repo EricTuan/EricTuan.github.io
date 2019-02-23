@@ -187,17 +187,14 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <h1 id="同时解决：-TypeError-Object-of-type-‘bytes’-is-not-JSON-serializable"><a href="#同时解决：-TypeError-Object-of-type-‘bytes’-is-not-JSON-serializable" class="headerlink" title="同时解决： TypeError: Object of type ‘bytes’ is not JSON serializable"></a>同时解决： TypeError: Object of type ‘bytes’ is not JSON serializable</h1><p>默认的编码函数很多数据类型都不能编码，因此可以自己写一个encoder去继承jsonencoder ，这样就能够进行编码了<br></p>
+            <a id="more"></a>
+<h1 id="同时解决：-TypeError-Object-of-type-‘bytes’-is-not-JSON-serializable"><a href="#同时解决：-TypeError-Object-of-type-‘bytes’-is-not-JSON-serializable" class="headerlink" title="同时解决： TypeError: Object of type ‘bytes’ is not JSON serializable"></a>同时解决： TypeError: Object of type ‘bytes’ is not JSON serializable</h1><p>默认的编码函数很多数据类型都不能编码，因此可以自己写一个encoder去继承jsonencoder ，这样就能够进行编码了</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class MyEncoder(json.JSONEncoder):</span><br><span class="line">    def default(self, obj):</span><br><span class="line">        if isinstance(obj, np.integer):</span><br><span class="line">            return int(obj)</span><br><span class="line">        elif isinstance(obj, np.floating):</span><br><span class="line">            return float(obj)</span><br><span class="line">        elif isinstance(obj, np.ndarray):</span><br><span class="line">            return obj.tolist()</span><br><span class="line">        else:</span><br><span class="line">            return super(MyEncoder, self).default(obj)</span><br></pre></td></tr></table></figure>
+<h1 id="dict-to-json"><a href="#dict-to-json" class="headerlink" title="dict to json"></a>dict to json</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def dict_to_json(dict_obj,name, Mycls = None):</span><br><span class="line">    </span><br><span class="line">    js_obj = json.dumps(dict_obj, cls = Mycls, indent=4)</span><br><span class="line">    </span><br><span class="line">    with open(name, &apos;w&apos;) as file_obj:</span><br><span class="line">        file_obj.write(js_obj)</span><br></pre></td></tr></table></figure>
+<h1 id="json-to-dict"><a href="#json-to-dict" class="headerlink" title="json to dict"></a>json to dict</h1><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def json_to_dict(filepath, Mycls = None):</span><br><span class="line">    with open(filepath,&apos;r&apos;) as js_obj:</span><br><span class="line">        dict_obj = json.load(js_obj, cls = Mycls)</span><br><span class="line">    return dict_obj</span><br></pre></td></tr></table></figure>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/01/22/dict和json格式转换/#more">Read More</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>

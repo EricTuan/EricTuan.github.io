@@ -7,19 +7,19 @@
 
 
 
-    <meta name="description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apo">
+    <meta name="description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;ap">
 <meta name="keywords" content="深度学习,bug,tensorflow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决Tensorflow-使用时cpu编译不支持警告">
 <meta property="og:url" content="http://yoursite.com/2019/01/13/解决Tensorflow-使用时cpu编译不支持警告/index.html">
 <meta property="og:site_name" content="Eric Tuan">
-<meta property="og:description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apo">
+<meta property="og:description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;ap">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/01/13/解决Tensorflow-使用时cpu编译不支持警告/post_gallery/tensorflow_warning.png">
-<meta property="og:updated_time" content="2019-02-23T06:06:05.453Z">
+<meta property="og:updated_time" content="2019-02-23T06:43:15.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决Tensorflow-使用时cpu编译不支持警告">
-<meta name="twitter:description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apo">
+<meta name="twitter:description" content="运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译  1234567`import os  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;apos;1&amp;apos; # 这是默认的显示等级，显示所有信息  os.environ[&amp;quot;TF_CPP_MIN_LOG_LEVEL&amp;quot;]=&amp;ap">
 <meta name="twitter:image" content="http://yoursite.com/2019/01/13/解决Tensorflow-使用时cpu编译不支持警告/post_gallery/tensorflow_warning.png">
 
 
@@ -171,7 +171,7 @@ var _hmt = _hmt || [];
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds read (About 84 words)
+                    a few seconds read (About 85 words)
                 </span>
                 
                 
@@ -189,7 +189,8 @@ var _hmt = _hmt || [];
             
         </h1>
         <div class="content">
-            <p>运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译</p>
+            <a id="more"></a>
+<p>运行Tensorflow时出现以下警告，原因是下载TensorFlow的版本不支持cpu的AVX2编译</p>
 <p><img src="post_gallery/tensorflow_warning.png" alt="tensorflow warning"></p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">`import os  </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;1&apos; # 这是默认的显示等级，显示所有信息  </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;2&apos; # 只显示 warning 和 Error   </span><br><span class="line"></span><br><span class="line">os.environ[&quot;TF_CPP_MIN_LOG_LEVEL&quot;]=&apos;3&apos; # 只显示 Error&apos;</span><br></pre></td></tr></table></figure>
 
