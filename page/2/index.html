@@ -154,14 +154,14 @@ var _hmt = _hmt || [];
                 <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
+                <a class="has-link-grey -link" href="/categories/linux/">linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/linux/解压/">解压</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 174 words)
+                    a minute read (About 198 words)
                 </span>
                 
                 
@@ -170,17 +170,16 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">python中open的模式</a>
+                <a class="has-link-black-ter" href="/2019/01/10/linux下文件解压/">linux下文件解压</a>
             
         </h1>
         <div class="content">
             <a id="more"></a>
-<p>r 只能读（read）</p>
-<p>r+ 可读可写，不会创建不存在的文件，如果直接写文件，则从顶部开始写，覆盖之前此位置的内容，如果先读后写，则会在文件最后追加内容（read+）</p>
-<p>w 只能写，覆盖整个文件，不存在则创建 （write）</p>
-<p>w+可读可写，如果文件存在则覆盖整个文件，不存在则创建 (write+)</p>
-<p>a 只能写，从文件底部添加内容，不存在则创建</p>
-<p>a+ 可读可写，从文件顶部读取内容，从文件底部添加内容，不存在则创建</p>
+<h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="主参数-模式-，以下参数有且只能有一个："><a href="#主参数-模式-，以下参数有且只能有一个：" class="headerlink" title="主参数(模式)，以下参数有且只能有一个："></a>主参数(模式)，以下参数有且只能有一个：</h3><p>-c: –create 新建一个压缩文档，即打包<br>-x: –extract,–get解压文件<br>-t: –list,查看压缩文档里的所有内容<br>-r:–append 向压缩文档里追加文件<br>-u:–update 更新原压缩包中的文件</p>
+<h3 id="可选项："><a href="#可选项：" class="headerlink" title="可选项："></a>可选项：</h3><p>-z ：用 gzip 压缩/解压缩<br>-j ：用 bzip2 压缩/解压缩<br>-v ：显示压缩/解压缩的进度条<br>-f ：使用档名（<strong>f后面不要接参数</strong>，要立即接文档名）</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.</span><br><span class="line">tar -tvf archive.tar         # List all files in archive.tar verbosely.</span><br><span class="line">tar -xf archive.tar          # Extract all files from archive.tar.</span><br></pre></td></tr></table></figure>
+<h2 id="unrar和7z"><a href="#unrar和7z" class="headerlink" title="unrar和7z"></a>unrar和7z</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unrar</span><br><span class="line">sudo apt install p7zip-full</span><br></pre></td></tr></table></figure>
+<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unrar e archive.rar</span><br><span class="line">7z x archive.7z</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -250,14 +249,14 @@ var _hmt = _hmt || [];
                 <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/linux/">linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/linux/解压/">解压</a>
+                <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/基础/">基础</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a minute read (About 198 words)
+                    a minute read (About 174 words)
                 </span>
                 
                 
@@ -266,16 +265,17 @@ var _hmt = _hmt || [];
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/01/10/linux下文件解压/">linux下文件解压</a>
+                <a class="has-link-black-ter" href="/2019/01/10/python中open的模式/">python中open的模式</a>
             
         </h1>
         <div class="content">
             <a id="more"></a>
-<h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="主参数-模式-，以下参数有且只能有一个："><a href="#主参数-模式-，以下参数有且只能有一个：" class="headerlink" title="主参数(模式)，以下参数有且只能有一个："></a>主参数(模式)，以下参数有且只能有一个：</h3><p>-c: –create 新建一个压缩文档，即打包<br>-x: –extract,–get解压文件<br>-t: –list,查看压缩文档里的所有内容<br>-r:–append 向压缩文档里追加文件<br>-u:–update 更新原压缩包中的文件</p>
-<h3 id="可选项："><a href="#可选项：" class="headerlink" title="可选项："></a>可选项：</h3><p>-z ：用 gzip 压缩/解压缩<br>-j ：用 bzip2 压缩/解压缩<br>-v ：显示压缩/解压缩的进度条<br>-f ：使用档名（<strong>f后面不要接参数</strong>，要立即接文档名）</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.</span><br><span class="line">tar -tvf archive.tar         # List all files in archive.tar verbosely.</span><br><span class="line">tar -xf archive.tar          # Extract all files from archive.tar.</span><br></pre></td></tr></table></figure>
-<h2 id="unrar和7z"><a href="#unrar和7z" class="headerlink" title="unrar和7z"></a>unrar和7z</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unrar</span><br><span class="line">sudo apt install p7zip-full</span><br></pre></td></tr></table></figure>
-<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unrar e archive.rar</span><br><span class="line">7z x archive.7z</span><br></pre></td></tr></table></figure>
+<p>r 只能读（read）</p>
+<p>r+ 可读可写，不会创建不存在的文件，如果直接写文件，则从顶部开始写，覆盖之前此位置的内容，如果先读后写，则会在文件最后追加内容（read+）</p>
+<p>w 只能写，覆盖整个文件，不存在则创建 （write）</p>
+<p>w+可读可写，如果文件存在则覆盖整个文件，不存在则创建 (write+)</p>
+<p>a 只能写，从文件底部添加内容，不存在则创建</p>
+<p>a+ 可读可写，从文件顶部读取内容，从文件底部添加内容，不存在则创建</p>
 
         </div>
         
@@ -1112,7 +1112,7 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:29:29.523Z">2019-02-24</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:30:31.518Z">2019-02-24</time></div>
                     <a href="/2019/02/24/Javascript/" class="has-link-black-ter is-size-6">vscode下JavaScript编程环境配置</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/环境配置/">环境配置</a>
@@ -1362,7 +1362,7 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:29:29.523Z">2019-02-24</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:30:31.518Z">2019-02-24</time></div>
                     <a href="/2019/02/24/Javascript/" class="has-link-black-ter is-size-6">vscode下JavaScript编程环境配置</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/JavaScript/">JavaScript</a> / <a class="has-link-grey -link" href="/categories/JavaScript/环境配置/">环境配置</a>
