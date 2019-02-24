@@ -246,6 +246,56 @@ var _hmt = _hmt || [];
                 <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
                 
                 <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/linux/">linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/linux/解压/">解压</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    a minute read (About 198 words)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/01/10/linux下文件解压/">linux下文件解压</a>
+            
+        </h1>
+        <div class="content">
+            <a id="more"></a>
+<h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="主参数-模式-，以下参数有且只能有一个："><a href="#主参数-模式-，以下参数有且只能有一个：" class="headerlink" title="主参数(模式)，以下参数有且只能有一个："></a>主参数(模式)，以下参数有且只能有一个：</h3><p>-c: –create 新建一个压缩文档，即打包<br>-x: –extract,–get解压文件<br>-t: –list,查看压缩文档里的所有内容<br>-r:–append 向压缩文档里追加文件<br>-u:–update 更新原压缩包中的文件</p>
+<h3 id="可选项："><a href="#可选项：" class="headerlink" title="可选项："></a>可选项：</h3><p>-z ：用 gzip 压缩/解压缩<br>-j ：用 bzip2 压缩/解压缩<br>-v ：显示压缩/解压缩的进度条<br>-f ：使用档名（<strong>f后面不要接参数</strong>，要立即接文档名）</p>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.</span><br><span class="line">tar -tvf archive.tar         # List all files in archive.tar verbosely.</span><br><span class="line">tar -xf archive.tar          # Extract all files from archive.tar.</span><br></pre></td></tr></table></figure>
+<h2 id="unrar和7z"><a href="#unrar和7z" class="headerlink" title="unrar和7z"></a>unrar和7z</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unrar</span><br><span class="line">sudo apt install p7zip-full</span><br></pre></td></tr></table></figure>
+<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unrar e archive.rar</span><br><span class="line">7z x archive.7z</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
+                
+                <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/python/">python</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/python/pygal/">pygal</a>
                 </div>
                 
@@ -346,56 +396,6 @@ var _hmt = _hmt || [];
 <p>axis = 0，直接按行切分，按列的方向堆叠<br>axis = 1，对初始的矩阵，连续做两次行切分（先得到二维子块，再得到一维子块），最后按列的方向堆叠<br>axis = 2，在上一步的基础上，做列切分（这样得到是具体的元素），再列堆叠</p>
 </blockquote>
 <p>这里需要注意的是，同一级的子块同级堆叠</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-01-10T07:55:37.000Z">2019-01-10</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/linux/">linux</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/linux/解压/">解压</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    a minute read (About 198 words)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/01/10/linux下文件解压/">linux下文件解压</a>
-            
-        </h1>
-        <div class="content">
-            <a id="more"></a>
-<h2 id="tar命令"><a href="#tar命令" class="headerlink" title="tar命令"></a>tar命令</h2><h3 id="主参数-模式-，以下参数有且只能有一个："><a href="#主参数-模式-，以下参数有且只能有一个：" class="headerlink" title="主参数(模式)，以下参数有且只能有一个："></a>主参数(模式)，以下参数有且只能有一个：</h3><p>-c: –create 新建一个压缩文档，即打包<br>-x: –extract,–get解压文件<br>-t: –list,查看压缩文档里的所有内容<br>-r:–append 向压缩文档里追加文件<br>-u:–update 更新原压缩包中的文件</p>
-<h3 id="可选项："><a href="#可选项：" class="headerlink" title="可选项："></a>可选项：</h3><p>-z ：用 gzip 压缩/解压缩<br>-j ：用 bzip2 压缩/解压缩<br>-v ：显示压缩/解压缩的进度条<br>-f ：使用档名（<strong>f后面不要接参数</strong>，要立即接文档名）</p>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cf archive.tar foo bar  # Create archive.tar from files foo and bar.</span><br><span class="line">tar -tvf archive.tar         # List all files in archive.tar verbosely.</span><br><span class="line">tar -xf archive.tar          # Extract all files from archive.tar.</span><br></pre></td></tr></table></figure>
-<h2 id="unrar和7z"><a href="#unrar和7z" class="headerlink" title="unrar和7z"></a>unrar和7z</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install unrar</span><br><span class="line">sudo apt install p7zip-full</span><br></pre></td></tr></table></figure>
-<h3 id="Examples-1"><a href="#Examples-1" class="headerlink" title="Examples:"></a>Examples:</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unrar e archive.rar</span><br><span class="line">7z x archive.7z</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -892,10 +892,10 @@ var _hmt = _hmt || [];
 <div class="card card-transparent">
     <nav class="pagination is-centered" role="navigation" aria-label="pagination">
         <div class="pagination-previous">
-            <a class="is-flex-grow has-text-black-ter" href="/">Previous</a>
+            <a class="is-flex-grow has-text-black-ter" href="/">Anterior</a>
         </div>
         <div class="pagination-next">
-            <a class="is-flex-grow has-text-black-ter" href="/page/3/">Next</a>
+            <a class="is-flex-grow has-text-black-ter" href="/page/3/">Siguiente</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
             
@@ -948,7 +948,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Posts
+                        Entradas
                     </p>
                     <p class="title has-text-weight-normal">
                         30
@@ -958,7 +958,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Categories
+                        Categorias
                     </p>
                     <p class="title has-text-weight-normal">
                         34
@@ -968,7 +968,7 @@ var _hmt = _hmt || [];
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Tags
+                        Etiquetas
                     </p>
                     <p class="title has-text-weight-normal">
                         13
@@ -978,7 +978,7 @@ var _hmt = _hmt || [];
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/EricTuan">
-                Follow</a>
+                SEGUIR</a>
         </div>
         
         
@@ -1053,7 +1053,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Categories
+                Categorias
             </h3>
             <ul class="menu-list">
             <li>
@@ -1298,7 +1298,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Tag Cloud
+            Nube de etiquetas
         </h3>
         <a href="/tags/Django/" style="font-size: 10px;">Django</a> <a href="/tags/JavaScript/" style="font-size: 12px;">JavaScript</a> <a href="/tags/bug/" style="font-size: 12px;">bug</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/linux/" style="font-size: 18px;">linux</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/tensorflow/" style="font-size: 10px;">tensorflow</a> <a href="/tags/小花样/" style="font-size: 14px;">小花样</a> <a href="/tags/模型优化/" style="font-size: 12px;">模型优化</a> <a href="/tags/深度学习/" style="font-size: 16px;">深度学习</a> <a href="/tags/远程连接/" style="font-size: 10px;">远程连接</a> <a href="/tags/面试经验/" style="font-size: 10px;">面试经验</a>
     </div>
@@ -1312,7 +1312,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -1325,7 +1325,7 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:46:07.832Z">2019-02-24</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:47:18.429Z">2019-02-24</time></div>
                     <a href="/2019/02/24/markdown_tricks/" class="has-link-black-ter is-size-6">markdown小花样</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/markdown/">markdown</a> / <a class="has-link-grey -link" href="/categories/markdown/tricks/">tricks</a>
@@ -1418,7 +1418,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1453,7 +1453,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1569,7 +1569,7 @@ var _hmt = _hmt || [];
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Recent
+            Recientes
         </h3>
         
         <article class="media">
@@ -1582,7 +1582,7 @@ var _hmt = _hmt || [];
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:46:07.832Z">2019-02-24</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-02-24T08:47:18.429Z">2019-02-24</time></div>
                     <a href="/2019/02/24/markdown_tricks/" class="has-link-black-ter is-size-6">markdown小花样</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/markdown/">markdown</a> / <a class="has-link-grey -link" href="/categories/markdown/tricks/">tricks</a>
@@ -1675,7 +1675,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Archives
+            Archivos
         </h3>
         <ul class="menu-list">
         
@@ -1710,7 +1710,7 @@ var _hmt = _hmt || [];
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Tags
+                Etiquetas
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
@@ -1992,10 +1992,10 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Posts',
+                POSTS: 'Entradas',
                 PAGES: 'Pages',
-                CATEGORIES: 'Categories',
-                TAGS: 'Tags',
+                CATEGORIES: 'Categorias',
+                TAGS: 'Etiquetas',
                 UNTITLED: '(Untitled)',
             },
             CONTENT_URL: '/content.json',
